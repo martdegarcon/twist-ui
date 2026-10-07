@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strike — Twist UI</title>
+<meta name="description" content="Удаление без окна подтверждения: свайп рисует зачёркивание под пальцем, и строка сворачивается.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/strike"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Strike</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Устройства</h1>
+    <p class="sub">Проведите вправо, чтобы выйти</p>
+  </div>
+
+  <div class="list" id="list"></div>
+
+  <div class="links"><a id="restore">Вернуть все устройства</a></div>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span id="toastText">iPhone 15 отключён</span>
+  <span class="undo-wrap" id="undoWrap"><button class="undo" id="undo" type="button">Отменить</button></span>
+</div>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

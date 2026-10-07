@@ -1,0 +1,11 @@
+
+.tabs{position:relative;display:flex;width:100%;height:52px;padding:4px;border-radius:var(--radius);background:var(--field)}
+.tab{position:relative;z-index:1;flex:1;border:0;background:none;color:var(--text-50);font:inherit;font-size:16px;letter-spacing:-.3px;cursor:pointer;
+  border-radius:12px;transition:color var(--fade) var(--ease), font-weight var(--move) var(--ease)}
+.tab.on{color:#121212;font-weight:600}
+.pill{position:absolute;top:4px;bottom:4px;left:0;border-radius:12px;background:var(--text)}
+.pill.anim{transition:transform var(--move) var(--ease), width var(--move) var(--ease)}
+.panels{position:relative;width:100%;height:214px;margin-top:10px}
+.panel{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;opacity:0;pointer-events:none}
+.panel.on{opacity:1;pointer-events:auto}
+.line{height:64px;display:flex;align-items:center;padding:0 20px;border-radius:var(--radius);background:var(--field);font-size:17px;letter-spacing:-.34px}

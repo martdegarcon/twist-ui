@@ -1,0 +1,16 @@
+
+.dp{width:100%;display:grid;grid-template-columns:1fr 1.6fr 1.2fr;gap:8px;height:156px}
+.seg{position:relative;border-radius:var(--radius);background:var(--field);overflow:hidden;cursor:ns-resize;touch-action:none;outline:none;
+  box-shadow:inset 0 0 0 1px transparent;transition:box-shadow var(--fade) var(--ease)}
+.seg:focus-visible,.seg.drag{box-shadow:inset 0 0 0 1px rgba(244,244,244,.35)}
+.seg::before,.seg::after{content:'';position:absolute;left:0;right:0;height:52px;z-index:2;pointer-events:none}
+.seg::before{top:0;background:linear-gradient(#232A39,rgba(35,42,57,0))}
+.seg::after{bottom:0;background:linear-gradient(rgba(35,42,57,0),#232A39)}
+.win{position:absolute;left:0;right:0;top:50%;will-change:transform}
+.win span{display:block;height:44px;line-height:44px;margin-top:-22px;text-align:center;font-size:20px;font-variant-numeric:tabular-nums;color:var(--text-50);
+  transition:color .3s var(--ease), font-weight .3s var(--ease), transform .3s var(--ease)}
+.win span:not(:first-child){margin-top:0}
+.win span.cur{color:var(--text);font-weight:600;transform:scale(1.08)}
+.seg .mark{position:absolute;left:8px;right:8px;top:50%;height:44px;margin-top:-22px;border-radius:12px;background:rgba(244,244,244,.08);pointer-events:none}
+.out{margin:14px 0 4px;font-size:15px;color:var(--text-80)}
+.btn{margin-top:10px}

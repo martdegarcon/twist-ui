@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dialog — Twist UI</title>
+<meta name="description" content="Диалог вырастает из кнопки, которая его открыла, и сворачивается обратно в неё.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Dialog</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Профиль</h1>
+    <p class="sub">Окно вырастает из своей кнопки</p>
+  </div>
+  <div class="profile">
+    <span class="ava">ММ</span>
+    <span class="who"><b id="pName">Марат М.</b><span id="pUser">@marat</span></span>
+  </div>
+  <button class="btn" id="open" type="button">Изменить профиль</button>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<div class="shell" id="shell" aria-hidden="true"><span class="ghost-label">Изменить профиль</span></div>
+<div class="dialog" id="dialog" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+  <h2 id="dTitle">Изменить профиль</h2>
+  <p class="dsub">Изменения увидит вся команда</p>
+  <label class="f"><span>Имя</span><input id="iName" value="Марат М." autocomplete="off"></label>
+  <label class="f"><span>Имя пользователя</span><input id="iUser" value="@marat" autocomplete="off"></label>
+  <div class="actions"><button class="btn ghost" id="cancel" type="button">Отмена</button><button class="btn light" id="save" type="button">Сохранить</button></div>
+</div>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

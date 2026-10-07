@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hover Card — Twist UI</title>
+<meta name="description" content="Карточка вырастает из упоминания, а само упоминание становится её заголовком.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/hover-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Hover Card</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Упоминания</h1>
+    <p class="sub">Наведите на имя — карточка вырастет из него</p>
+  </div>
+  <div class="post">
+    <p>Выкатили новый онбординг вместе с <a class="mention" data-who="anna" tabindex="0">@anna</a> — она переделала все пустые состояния.
+       Спасибо <a class="mention" data-who="egor" tabindex="0">@egor</a> за ревью анимаций.</p>
+  </div>
+</main>
+<div class="hc" id="hc" aria-hidden="true">
+  <div class="hc-in" id="hcIn"></div>
+</div>
+<span class="fly" id="fly"></span>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

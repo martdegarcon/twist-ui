@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carousel — Twist UI</title>
+<meta name="description" content="Карусель как колода карт: верхняя карта уходит под низ колоды.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/carousel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Carousel</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Система</h1>
+    <p class="sub">Смахните карту — она уйдёт под колоду</p>
+  </div>
+  <div class="deck" id="deck"><article class="slide" data-i="0" style="--a:#2C3853;--b:#97A6BE"><span class="k">01</span><div><h3>Шрифт</h3><p>Onest, 100–900</p></div></article><article class="slide" data-i="1" style="--a:#3B2C53;--b:#B097BE"><span class="k">02</span><div><h3>Движение</h3><p>Одна кривая на всё</p></div></article><article class="slide" data-i="2" style="--a:#2C4A53;--b:#97BEB5"><span class="k">03</span><div><h3>Тактильность</h3><p>Касания, которые ощущаешь</p></div></article><article class="slide" data-i="3" style="--a:#53412C;--b:#BEA997"><span class="k">04</span><div><h3>Цвет</h3><p>От ночи к утру</p></div></article><article class="slide" data-i="4" style="--a:#2C3353;--b:#9AA0C4"><span class="k">05</span><div><h3>Отступы</h3><p>16, 10, 28</p></div></article></div>
+  <div class="ctl">
+    <button class="nav" id="prev" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <span class="count"><span class="drum" id="drum"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></span>&nbsp;из 5</span>
+    <button class="nav" id="next" aria-label="Вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

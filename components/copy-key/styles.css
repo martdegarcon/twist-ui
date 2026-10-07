@@ -1,0 +1,63 @@
+.title-wrap{width:100%;margin-bottom:28px;text-align:center}
+.title{font-size:34px;font-weight:500;line-height:44px}
+.sub{margin-top:8px;font-size:15px;line-height:20px;color:var(--text-80)}
+
+/* ---------- field ---------- */
+.field{position:relative;width:100%;height:64px;border-radius:16px;background:var(--field);overflow:hidden}
+.lbl{position:absolute;left:20px;top:11px;font-size:14px;line-height:18px;color:var(--text-80)}
+.val{position:absolute;left:20px;top:30px;font-size:18px;line-height:23px;letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;white-space:pre;transition:opacity .45s var(--ease)}
+.sel{position:absolute;left:16px;top:29px;height:25px;width:0;border-radius:6px;background:rgba(244,244,244,.16);opacity:0;
+  transition:width .24s var(--ease), opacity var(--fade) var(--ease)}
+
+/* 1 — select */
+.field.selecting .sel{width:calc(var(--vw) + 8px);opacity:1}
+/* 2 — lift: the original dims while its copy flies away */
+.field.selecting.lifted .sel{opacity:0}
+.field.lifted .val{opacity:.3;transition-duration:.2s}
+
+/* the flying copy */
+.fly{position:fixed;z-index:50;pointer-events:none;white-space:pre;font-family:'Onest',system-ui,sans-serif;
+  font-size:18px;line-height:23px;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:var(--text);
+  transform-origin:center;will-change:transform,opacity,filter}
+
+/* ---------- button ---------- */
+.btn-wrap{position:relative;width:100%;margin-top:10px}
+.btn{position:relative;width:100%;height:64px;border:0;border-radius:16px;background:var(--btn);color:var(--text);
+  font:inherit;font-size:18px;letter-spacing:-.36px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:transform .25s var(--ease)}
+.btn:active{transform:scale(.97)}
+
+.ico{position:relative;width:22px;height:22px;flex:none}
+.ico svg{position:absolute;inset:0;width:22px;height:22px;
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease), filter var(--fade) var(--ease)}
+.ico .front{transition:transform var(--move) var(--ease)}
+.i-check{opacity:0}
+.i-check path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .5s var(--ease)}
+
+/* the icon "opens" while the copy is in flight */
+.btn.catching .front{transform:translate(1.5px,1.5px)}
+/* 3 — catch: icon swallows the text */
+.ico.bump{animation:bump .42s var(--ease)}
+@keyframes bump{0%{transform:scale(1)}35%{transform:scale(1.28)}100%{transform:scale(1)}}
+
+/* 4 — copied: icon morphs into a check, word morphs Copy → Copied */
+.btn.copied .i-copy{opacity:0;transform:scale(.6) rotate(-12deg);filter:blur(2px)}
+.btn.copied .i-check{opacity:1}
+.btn.copied .i-check path{stroke-dashoffset:0;transition-delay:.08s}
+
+.word{display:inline-flex;align-items:baseline;white-space:pre}
+.tail{display:inline-block;overflow:hidden;
+  transition:max-width var(--move) var(--ease), opacity var(--fade) var(--ease), filter var(--fade) var(--ease)}
+.t-copy{max-width:var(--w-copy, 1em)}
+.t-copied{max-width:0}
+.t-copied i{display:inline-block;font-style:normal;opacity:0;filter:blur(4px);transform:translateY(8px);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease);
+  transition-delay:calc(var(--i) * 45ms)}
+.btn.copied .t-copy{max-width:0;opacity:0;filter:blur(4px)}
+.btn.copied .t-copied{max-width:var(--w-copied, 2em)}
+.btn.copied .t-copied i{opacity:1;filter:none;transform:none;transition-delay:calc(60ms + var(--i) * 45ms)}
+
+
+/* ---------- links ---------- */
+

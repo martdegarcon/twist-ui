@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field — Twist UI</title>
+<meta name="description" content="Поле, где подсказка не сменяется ошибкой, а перетекает в неё слово за словом.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Field</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Имя пользователя</h1>
+    <p class="sub">Подсказка перетекает в ошибку по словам</p>
+  </div>
+  <label class="field" id="field">
+    <span class="lbl">Имя пользователя</span>
+    <span class="row"><span class="at">@</span><input id="u" autocomplete="off" spellcheck="false" maxlength="24"></span>
+  </label>
+  <p class="hint" id="hint" aria-live="polite"></p>
+  <div class="links"><a data-v="ma">Коротко</a> · <a data-v="marat!">Лишний символ</a> · <a data-v="marat">Подходит</a></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

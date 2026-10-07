@@ -1,0 +1,29 @@
+.area{position:relative;display:block;width:100%;height:136px;border-radius:var(--radius);background:var(--field);cursor:text;
+  box-shadow:inset 0 0 0 1px transparent;transition:box-shadow var(--fade) var(--ease)}
+.area.over{box-shadow:inset 0 0 0 1px rgba(255,155,143,.35)}
+
+.lbl{position:absolute;left:20px;right:20px;top:12px;height:18px;width:auto}
+.lbl > *{justify-content:flex-start;font-size:14px}
+
+/* textarea and mirror share exactly the same box + type, the mirror draws the text */
+.mirror, .area textarea{position:absolute;left:20px;right:20px;top:36px;bottom:14px;
+  font:inherit;font-size:18px;line-height:24px;letter-spacing:var(--ls, -.36px);
+  white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;
+  transition:letter-spacing var(--move) var(--ease)}
+.area textarea{border:0;outline:0;background:transparent;resize:none;padding:0;color:transparent;caret-color:var(--text);overflow:hidden;z-index:2}
+.area textarea::selection{background:rgba(244,244,244,.25)}
+.mirror{pointer-events:none;color:var(--text);overflow:hidden}
+.mirror .x{opacity:.28;filter:blur(1.5px);transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease)}
+.mirror .ph{color:var(--text-50)}
+
+.save-wrap{position:relative;width:100%;margin-top:10px}
+.save-wrap .haptic-switch{pointer-events:none}
+.save-wrap.tappable .haptic-switch{pointer-events:auto}
+.save .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease)}
+.save .lab svg{width:18px;height:18px}
+.save .s2{opacity:0;filter:blur(4px);transform:translateY(8px)}
+.save.saved .s1{opacity:0;filter:blur(4px);transform:translateY(-8px)}
+.save.saved .s2{opacity:1;filter:none;transform:none}
+
+.links{margin-top:20px}

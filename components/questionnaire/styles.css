@@ -1,0 +1,27 @@
+
+.chat{width:100%;border-radius:var(--radius);background:var(--field);padding:16px;display:flex;flex-direction:column;min-height:420px}
+.steps{display:flex;gap:6px;margin-bottom:14px}
+.steps i{flex:1;height:3px;border-radius:2px;background:rgba(244,244,244,.12);position:relative;overflow:hidden}
+.steps i::after{content:'';position:absolute;inset:0;background:var(--text);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.steps i.on::after{transform:scaleX(1)}
+.log{flex:1;display:flex;flex-direction:column;gap:8px;justify-content:flex-end}
+.msg{max-width:84%;padding:11px 14px;border-radius:16px;font-size:16px;line-height:21px;letter-spacing:-.25px}
+.msg.bot{align-self:flex-start;background:rgba(244,244,244,.08);border-bottom-left-radius:6px}
+.msg.me{align-self:flex-end;background:var(--text);color:#121212;border-bottom-right-radius:6px;font-weight:500}
+.msg.me.ghost{visibility:hidden}
+.w{display:inline-block;opacity:0;filter:blur(4px);transform:translateY(4px);transition:opacity .3s var(--ease), filter .3s var(--ease), transform .4s var(--ease)}
+.w.on{opacity:1;filter:none;transform:none}
+.typing{display:inline-flex;gap:4px;padding:4px 2px}
+.typing b{width:6px;height:6px;border-radius:50%;background:var(--text-50);animation:dot 1s infinite var(--ease)}
+.typing b:nth-child(2){animation-delay:.15s}.typing b:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,100%{opacity:.3;transform:none}50%{opacity:1;transform:translateY(-3px)}}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;min-height:44px}
+.opt{height:44px;padding:0 16px;border:0;border-radius:14px;background:rgba(244,244,244,.1);color:var(--text);font:inherit;font-size:15px;letter-spacing:-.2px;cursor:pointer;
+  opacity:0;transform:translateY(8px);filter:blur(4px);
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease), filter var(--fade) var(--ease), background var(--fade) var(--ease)}
+.opt.in{opacity:1;transform:none;filter:none}
+.opt:hover{background:rgba(244,244,244,.16)}
+.opt.leave{opacity:0;transform:translateY(8px) scale(.96);filter:blur(4px)}
+.opt.picked{visibility:hidden}
+.flyer{position:fixed;z-index:20;margin:0;pointer-events:none;display:flex;align-items:center;white-space:nowrap;font-size:15px;letter-spacing:-.2px}
+.restart{margin-top:12px;align-self:center;border:0;background:none;color:var(--ink);font:inherit;font-weight:600;font-size:16px;cursor:pointer}

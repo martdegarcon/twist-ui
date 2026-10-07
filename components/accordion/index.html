@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accordion — Twist UI</title>
+<meta name="description" content="Аккордеон: открытый раздел набирает вес, остальные отходят на второй план.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/accordion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Accordion</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Вопросы</h1>
+    <p class="sub">Открытый ответ тяжелеет, прочие гаснут</p>
+  </div>
+  <div class="acc" id="acc"><div class="it"><button class="q" aria-expanded="false"><span>Что такое Twist UI?</span><i></i></button><div class="a"><div><p>Знакомые компоненты, каждый собран вокруг одной идеи: состояние живёт в шрифте и движении, а не в лишних рамках.</p></div></div></div><div class="it"><button class="q" aria-expanded="false"><span>Можно ли в продакшен?</span><i></i></button><div class="a"><div><p>Это чистые HTML, CSS и JS без зависимостей. Скопируйте папку, оставьте общие токены — и всё работает.</p></div></div></div><div class="it"><button class="q" aria-expanded="false"><span>Почему одна кривая анимации?</span><i></i></button><div class="a"><div><p>С одной кривой всё ощущается единым материалом. Перемещения длятся полсекунды, затухания — треть.</p></div></div></div><div class="it"><button class="q" aria-expanded="false"><span>Работает на телефонах?</span><i></i></button><div class="a"><div><p>Да. Android ещё и вибрирует в ключевые моменты, а iPhone щёлкает при нажатии на нативные переключатели.</p></div></div></div></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

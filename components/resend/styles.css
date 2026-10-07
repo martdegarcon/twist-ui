@@ -1,0 +1,38 @@
+.btn-wrap{position:relative;width:100%}
+.resend{overflow:hidden}
+.resend .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease)}
+.resend .lab svg{width:18px;height:18px}
+.resend .l-write{gap:0}
+
+/* the label writes itself in: JS drives --a (0→1) per letter */
+.l-write .l{display:inline-block;color:var(--text);
+  opacity:calc(.14 + var(--a, 0) * .86);
+  filter:blur(calc((1 - var(--a, 0)) * 3px));
+  transform:translateY(calc((1 - var(--a, 0)) * 4px));
+  font-weight:400;transition:font-weight .6s var(--ease)}
+.resend.ready .l-write .l{font-weight:500}
+.resend[disabled]{color:var(--text)}
+.resend[disabled]:active{transform:none}
+
+/* tap: letters leave one by one */
+.l-sending, .l-sent{opacity:0;filter:blur(4px);transform:translateY(8px)}
+.resend.sending .l-write .l{opacity:0;filter:blur(4px);transform:translateY(-8px);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease);
+  transition-delay:calc(var(--i) * 22ms)}
+.resend.sending .l-sending{opacity:1;filter:none;transform:none;transition-delay:.25s}
+.resend.sent .l-write .l{opacity:0;transition:none}
+.resend.sent .l-sending{opacity:0;filter:blur(4px);transform:translateY(-8px)}
+.resend.sent .l-sent{opacity:1;filter:none;transform:none}
+.l-sent path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .5s var(--ease) .15s}
+.resend.sent .l-sent path{stroke-dashoffset:0}
+
+/* ready: the button settles */
+.resend.ready{background:#121212;box-shadow:0 0 0 1px rgba(244,244,244,.08)}
+.resend{background:rgba(18,18,18,.55)}
+
+.btn-wrap.tappable .haptic-switch{pointer-events:auto}
+.btn-wrap .haptic-switch{pointer-events:none}
+
+.status{margin-top:16px}
+.links{margin-top:20px}

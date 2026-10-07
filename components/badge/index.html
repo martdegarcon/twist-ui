@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Badge — Twist UI</title>
+<meta name="description" content="Бейдж, где число прокручивается по разрядам и растёт, когда нужен новый.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Badge</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Входящие</h1>
+    <p class="sub">Цифры крутятся, бейдж растёт вширь</p>
+  </div>
+  <div class="row">
+    <span class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 13l2.5-7.5h11L20 13v5.5H4z"/><path d="M4 13h4.5l1 2h5l1-2H20"/></svg>Входящие</span>
+    <span class="badge" id="badge"></span>
+  </div>
+  <div class="ctl">
+    <button class="btn" id="add" type="button">+1 письмо</button>
+    <button class="btn" id="add9" type="button">+9</button>
+    <button class="btn ghost" id="read" type="button">Прочитано</button>
+  </div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

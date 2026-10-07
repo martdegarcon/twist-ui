@@ -1,0 +1,28 @@
+
+.list{width:100%;display:flex;flex-direction:column;gap:10px}
+.it{position:relative;height:72px;border-radius:var(--radius);display:flex;align-items:center;gap:14px;padding:0 18px;overflow:hidden;
+  transition:background var(--move) var(--ease), box-shadow var(--move) var(--ease), opacity var(--move) var(--ease), transform var(--move) var(--ease), height var(--move) var(--ease), margin var(--move) var(--ease)}
+/* ghost: dashed outline of a future item */
+.it.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(244,244,244,.16)}
+.it.ghost::before{content:'';position:absolute;inset:0;border-radius:inherit;border:1.5px dashed rgba(244,244,244,.28);transition:opacity var(--move) var(--ease)}
+.it.ghost:nth-child(2){opacity:.6}.it.ghost:nth-child(3){opacity:.3}
+.it.real{background:var(--field);box-shadow:inset 0 0 0 1.5px transparent}
+.it.real::before{opacity:0}
+.ic{width:40px;height:40px;border-radius:12px;flex:none;background:rgba(244,244,244,.08);transition:background .7s var(--ease)}
+.it.real .ic{background:linear-gradient(135deg,var(--a),var(--b))}
+.tx{flex:1;display:flex;flex-direction:column;gap:6px}
+.bar{height:10px;border-radius:5px;background:rgba(244,244,244,.08);width:60%;transition:opacity .3s var(--ease)}
+.bar.s{width:36%;height:8px}
+.it.real .bar{opacity:0}
+.tt{position:absolute;left:72px;top:16px;display:flex;flex-direction:column}
+.tt b{font-size:17px;font-weight:500;letter-spacing:-.34px}
+.tt span{font-size:13px;color:var(--text-50)}
+.l{display:inline-block;opacity:0;filter:blur(4px);transform:translateY(4px);transition:opacity .3s var(--ease), filter .3s var(--ease), transform .4s var(--ease)}
+.l.on{opacity:1;filter:none;transform:none}
+.it.new{height:0;margin-top:-10px;opacity:0;transform:translateY(10px)}
+.note{display:flex;flex-direction:column;align-items:center;gap:2px;margin:18px 0 6px;text-align:center;max-height:60px;overflow:hidden;
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), max-height var(--move) var(--ease), margin var(--move) var(--ease)}
+.note b{font-size:17px;font-weight:500}.note span{font-size:14px;color:var(--text-50)}
+.note.gone{opacity:0;filter:blur(4px);max-height:0;margin:8px 0 0}
+.btn{margin-top:10px}
+.links{margin-top:20px}

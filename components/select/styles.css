@@ -1,0 +1,17 @@
+
+.sel{position:relative;width:100%}
+.trig{width:100%;height:64px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 20px;border:0;border-radius:var(--radius);background:var(--field);color:var(--text);font:inherit;cursor:pointer;position:relative}
+.lbl{font-size:13px;color:var(--text-50)}
+.val{font-size:18px;letter-spacing:-.36px;min-height:23px;transition:opacity .15s}
+.val.hide{opacity:0}
+.chev{position:absolute;right:22px;top:50%;width:8px;height:8px;margin-top:-6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg)}
+.list{position:absolute;left:0;right:0;list-style:none;padding:6px;border-radius:18px;background:#121212;box-shadow:0 24px 48px -20px rgba(0,0,0,.7);z-index:5;
+  clip-path:inset(var(--ct, 0) 0 var(--cb, 0) 0 round 16px);opacity:0;pointer-events:none;
+  transition:clip-path var(--move) var(--ease), opacity .2s var(--ease)}
+.list.on{clip-path:inset(0 0 0 0 round 18px);opacity:1;pointer-events:auto}
+.list li{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;border-radius:12px;font-size:18px;letter-spacing:-.36px;cursor:pointer;
+  transition:background var(--fade) var(--ease)}
+.list li:hover,.list li.act{background:rgba(244,244,244,.08)}
+.list li .ck{width:16px;height:16px;opacity:0}
+.list li.cur .ck{opacity:1}
+.fly{position:fixed;z-index:30;pointer-events:none;font-size:18px;letter-spacing:-.36px;color:var(--text);white-space:nowrap}

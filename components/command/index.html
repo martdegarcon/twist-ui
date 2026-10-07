@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command — Twist UI</title>
+<meta name="description" content="Командная палитра: подсветка скользит между результатами, а результаты плавно встают на новые места.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/command"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Command</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Команды</h1>
+    <p class="sub">Нажмите ⌘K или кнопку — результаты и подсветка скользят</p>
+  </div>
+  <button class="btn" id="openK" type="button">Открыть меню команд <kbd>⌘K</kbd></button>
+</main>
+<div class="scrim" id="scrim"></div>
+<div class="k" id="k" role="dialog" aria-modal="true" aria-label="Меню команд">
+  <div class="kin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+    <input id="kq" placeholder="Введите команду…" autocomplete="off" spellcheck="false"></div>
+  <div class="kl" id="kl"><span class="hl" id="hl"></span></div>
+</div>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

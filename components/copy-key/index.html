@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Copy Key — Twist UI</title>
+<meta name="description" content="Микровзаимодействие копирования: текст отрывается от поля и улетает в иконку кнопки.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/copy-key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Copy Key</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Резервный ключ</h1>
+    <p class="sub">Храните его в надёжном месте — без пароля<br>это единственный способ войти</p>
+  </div>
+
+  <div class="field" id="field">
+    <span class="lbl">Ключ восстановления</span>
+    <span class="sel" aria-hidden="true"></span>
+    <span class="val" id="val">K7QF-2M9X-PL4R-8WZD</span>
+  </div>
+
+  <div class="btn-wrap" id="btnWrap">
+    <button class="btn" id="btn" type="button" aria-live="polite">
+      <span class="ico" id="ico" aria-hidden="true">
+        <svg class="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+          <rect class="back" x="4" y="4" width="11" height="11" rx="3"/>
+          <rect class="front" x="9" y="9" width="11" height="11" rx="3" fill="#121212"/>
+        </svg>
+        <svg class="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      </span>
+      <span class="word" aria-label="Скопировать"><span>Скопиров</span><span class="tail t-copy">ать</span><span class="tail t-copied"><i style="--i:0">а</i><i style="--i:1">н</i><i style="--i:2">о</i></span></span>
+    </button>
+  </div>
+
+  <div class="links"><a>Я сохранил ключ</a></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

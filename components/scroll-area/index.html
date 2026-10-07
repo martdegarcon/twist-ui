@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scroll Area — Twist UI</title>
+<meta name="description" content="Скроллбар во время прокрутки разворачивается в название текущего раздела.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/scroll-area"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Scroll Area</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Гайдлайны</h1>
+    <p class="sub">Прокрутите — ползунок подскажет, где вы</p>
+  </div>
+  <div class="area" id="area">
+    <div class="vp" id="vp"><section data-t="Типографика"><h3>Типографика</h3><p>Onest держит каждый экран. Говорит насыщенность: Thin шепчет, Black настаивает. С ростом кегля трекинг сжимается, и крупный текст остаётся спокойным.</p><p>Onest держит каждый экран. Говорит насыщенность: Thin шепчет, Black настаивает. С ростом кегля трекинг сжимается, и крупный текст остаётся спокойным.</p></section><section data-t="Цвет"><h3>Цвет</h3><p>Фон — небо от ночи к утру. Поверхности — полупрозрачные чернила, текст — тёплый белый, а красный появляется, только когда что-то пошло не так.</p><p>Фон — небо от ночи к утру. Поверхности — полупрозрачные чернила, текст — тёплый белый, а красный появляется, только когда что-то пошло не так.</p></section><section data-t="Анимация"><h3>Анимация</h3><p>Одна кривая на всё — быстрый старт и долгое мягкое приземление. Перемещение — полсекунды, затухание — треть. Ничего не пружинит.</p><p>Одна кривая на всё — быстрый старт и долгое мягкое приземление. Перемещение — полсекунды, затухание — треть. Ничего не пружинит.</p></section><section data-t="Отступы"><h3>Отступы</h3><p>Шестнадцать — радиус, десять — между полями, двадцать восемь — под заголовком. Небольшие числа, повторённые много раз, задают ритм.</p><p>Шестнадцать — радиус, десять — между полями, двадцать восемь — под заголовком. Небольшие числа, повторённые много раз, задают ритм.</p></section><section data-t="Хаптика"><h3>Хаптика</h3><p>Android отзывается на каждый момент. iPhone — только на нативные переключатели, поэтому важная обратная связь живёт именно в них.</p><p>Android отзывается на каждый момент. iPhone — только на нативные переключатели, поэтому важная обратная связь живёт именно в них.</p></section><section data-t="Тексты"><h3>Тексты</h3><p>Подпись говорит, что произойдёт, а не что это за кнопка. «Зажмите, чтобы удалить Atlas» лучше, чем «Подтвердить».</p><p>Подпись говорит, что произойдёт, а не что это за кнопка. «Зажмите, чтобы удалить Atlas» лучше, чем «Подтвердить».</p></section></div>
+    <div class="rail" id="rail"><div class="thumb" id="thumb"><span class="tag" id="tag"></span></div></div>
+  </div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

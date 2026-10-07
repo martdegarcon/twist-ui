@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Input Group — Twist UI</title>
+<meta name="description" content="Поле для адреса: вставленный https:// уезжает в префикс, к домену подсказывается окончание, а для длинного текста префикс уступает место.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/input-group"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Input Group</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Сайт</h1>
+    <p class="sub">Вставьте ссылку — «https://» встанет на место</p>
+  </div>
+  <label class="grp" id="grp">
+    <span class="pre" id="pre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg><span class="pt">https://</span></span>
+    <span class="mid"><span class="mirror" id="mirror"></span><input id="url" autocomplete="off" spellcheck="false" inputmode="url" placeholder="вашсайт"></span>
+    <span class="suf" id="suf"></span>
+  </label>
+  <div class="links"><a id="paste">Вставить «https://marat.design»</a></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

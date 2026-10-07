@@ -1,0 +1,14 @@
+
+.doc{position:relative;width:100%;padding:22px;border-radius:var(--radius);background:var(--field);font-size:18px;line-height:30px;letter-spacing:-.3px;color:var(--text-80)}
+.doc p + p{margin-top:14px}
+.doc ::selection{background:rgba(244,244,244,.18)}
+.marks{position:absolute;inset:0;pointer-events:none}
+.mk{position:absolute;pointer-events:auto;cursor:pointer;border-radius:3px 6px 4px 7px;background:rgba(255,230,140,.85);mix-blend-mode:multiply;
+  transform-origin:left center;transform:scaleX(0) skewX(-6deg);transition:transform .45s cubic-bezier(.6,0,.3,1)}
+.mk.on{transform:scaleX(1) skewX(-6deg)}
+.mk.wipe{transform-origin:right center;transform:scaleX(0) skewX(-6deg);transition-duration:.35s}
+/* on a dark surface multiply would vanish; use a screen-safe warm marker instead */
+.doc .mk{mix-blend-mode:normal;background:rgba(255,214,102,.28);box-shadow:inset 0 -2px 0 rgba(255,214,102,.5)}
+.doc .txt-on{color:var(--text)}
+.ctl{display:grid;grid-template-columns:1.6fr 1fr;gap:10px;width:100%;margin-top:10px}
+.btn.ghost{background:var(--field)}

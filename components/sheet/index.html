@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sheet — Twist UI</title>
+<meta name="description" content="Боковая панель не перекрывает страницу, а сдвигает её; сетка перестраивается и уступает место.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/sheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Sheet</b></a>
+
+<div class="shell" id="shell">
+<main class="card wide">
+  <div class="title-wrap">
+    <h1 class="title">Библиотека</h1>
+    <p class="sub">Откройте панель — сетка подвинется</p>
+  </div>
+  <div class="grid" id="grid"><div class="tile" style="--h:220">Atlas</div><div class="tile" style="--h:260">Dealflow</div><div class="tile" style="--h:200">Care</div><div class="tile" style="--h:30">Вывоз</div><div class="tile" style="--h:280">Песочница</div><div class="tile" style="--h:240">Flow</div></div>
+  <button class="btn" id="open" type="button">Фильтры</button>
+</main>
+<aside class="sheet" id="sheet" aria-label="Фильтры">
+  <h2>Фильтры</h2>
+  <label class="chk">Показывать архив<input type="checkbox" switch checked></label>
+  <label class="chk">Только мои<input type="checkbox" switch></label>
+  <label class="chk">Недавно изменённые<input type="checkbox" switch checked></label>
+  <button class="btn light" id="close" type="button">Готово</button>
+</aside>
+</div>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

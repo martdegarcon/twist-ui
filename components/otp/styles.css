@@ -1,0 +1,48 @@
+.otp{position:relative;width:100%;height:64px}
+.cells{display:flex;gap:8px;height:100%;transition:gap var(--move) var(--ease)}
+.cell{position:relative;flex:1;height:64px;border-radius:var(--radius);background:var(--field);overflow:hidden;
+  box-shadow:inset 0 0 0 1px transparent;
+  transition:border-radius var(--move) var(--ease), box-shadow var(--fade) var(--ease), background var(--fade) var(--ease)}
+.cell.active{box-shadow:inset 0 0 0 1px rgba(244,244,244,.35)}
+
+/* the drum: 0–9 stacked, rolled to the digit */
+.strip{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;align-items:center;
+  font-size:26px;font-weight:500;letter-spacing:-.5px;font-variant-numeric:tabular-nums;
+  transform:translateY(calc(var(--d, 0) * -64px));opacity:0;
+  transition:transform .7s var(--ease), opacity .25s var(--ease), filter .3s var(--ease)}
+.strip span{height:64px;line-height:64px}
+.cell.filled .strip{opacity:1}
+.cell.rolling .strip{filter:blur(.7px)}
+
+.caret{position:absolute;left:50%;top:50%;margin:-9.5px 0 0 -.75px;opacity:0;animation:none}
+.otp.focus .cell.active .caret{opacity:1;animation:blink 1.1s steps(1) infinite}
+
+/* wrong */
+.otp.wrong .cell{box-shadow:inset 0 0 0 1px rgba(255,155,143,.45)}
+.otp.wrong .strip{color:var(--err)}
+
+/* right: cells fuse into one plate */
+.otp.fuse .cells{gap:0}
+.otp.fuse .cell{border-radius:0}
+.otp.fuse .cell:first-child{border-radius:var(--radius) 0 0 var(--radius)}
+.otp.fuse .cell:last-child{border-radius:0 var(--radius) var(--radius) 0}
+.otp.done .strip{opacity:0;filter:blur(6px);transform:translateY(calc(var(--d, 0) * -64px - 14px));
+  transition:transform var(--move) var(--ease), opacity var(--fade) var(--ease), filter var(--fade) var(--ease);
+  transition-delay:calc(var(--i) * 35ms)}
+.plate{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;font-size:18px;letter-spacing:-.36px;
+  pointer-events:none;opacity:0;filter:blur(4px);transform:translateY(10px);
+  transition:opacity var(--fade) var(--ease) .2s, filter var(--fade) var(--ease) .2s, transform var(--move) var(--ease) .2s}
+.plate svg{width:20px;height:20px}
+.plate path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .5s var(--ease) .45s}
+.otp.done .plate{opacity:1;filter:none;transform:none}
+.otp.done .plate path{stroke-dashoffset:0}
+
+#code{position:absolute;inset:0;width:100%;height:100%;opacity:0;border:0;font-size:16px;color:transparent;caret-color:transparent;cursor:text;z-index:2}
+.otp.done #code{pointer-events:none}
+
+.status{margin-top:16px}
+.status b{font-weight:500;color:var(--text);letter-spacing:.06em;margin-left:4px}
+.links{margin-top:20px}
+
+.reset{position:fixed;right:16px;bottom:16px;font:500 12px/1 'Onest',sans-serif;letter-spacing:0;color:var(--ink);
+  background:rgba(244,244,244,.5);border:0;border-radius:10px;padding:10px 12px;cursor:pointer}

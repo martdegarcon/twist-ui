@@ -1,0 +1,13 @@
+
+.bar{position:relative;display:flex;gap:6px;padding:6px;border-radius:var(--radius);background:var(--field);margin-top:60px}
+.tb{width:48px;height:48px;border:0;border-radius:12px;background:none;color:var(--text);font:inherit;font-size:19px;cursor:pointer;transition:background var(--fade) var(--ease)}
+.tb:hover,.tb:focus-visible{background:rgba(244,244,244,.08);outline:none}
+.tip{position:absolute;bottom:calc(100% + 10px);left:0;height:34px;padding:0 12px;border-radius:10px;background:var(--text);color:#121212;font-size:14px;font-weight:600;white-space:nowrap;
+  display:flex;align-items:center;overflow:hidden;opacity:0;transform:translateY(6px) scale(.96);pointer-events:none;
+  transition:opacity .2s var(--ease), transform .35s var(--ease), left .4s var(--ease), width .4s var(--ease)}
+.tip.on{opacity:1;transform:none}
+.tip.instant{transition:opacity .2s var(--ease), transform .35s var(--ease)}
+.tip::after{content:'';position:absolute;left:var(--ax, 50%);bottom:-5px;width:10px;height:10px;margin-left:-5px;background:var(--text);transform:rotate(45deg);border-radius:2px;transition:left .4s var(--ease)}
+.tt{position:relative}
+.l{display:inline-block;white-space:pre;opacity:0;filter:blur(3px);transform:translateY(4px);transition:opacity .25s var(--ease), filter .25s var(--ease), transform .3s var(--ease)}
+.l.on{opacity:1;filter:none;transform:none}

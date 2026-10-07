@@ -1,0 +1,15 @@
+
+.thread{width:100%;min-height:300px;max-height:420px;overflow:auto;padding:16px;border-radius:var(--radius);background:var(--field);display:flex;flex-direction:column;gap:10px;scrollbar-width:none}
+.m{max-width:88%;padding:11px 14px;border-radius:16px;font-size:16px;line-height:23px;letter-spacing:-.25px}
+.m.me{align-self:flex-end;background:var(--text);color:#121212;font-weight:500;border-bottom-right-radius:6px}
+.m.ai{align-self:flex-start;background:rgba(244,244,244,.06);border-bottom-left-radius:6px;color:var(--text)}
+/* fresh ink: thin, blurred, slightly low — then it dries into Regular */
+.w{font-weight:200;opacity:0;filter:blur(5px);display:inline;transition:font-weight 1.2s var(--ease), opacity .35s var(--ease), filter .5s var(--ease)}
+.w.in{opacity:.75;filter:blur(0)}
+.w.dry{font-weight:400;opacity:1}
+.cur{display:inline-block;width:8px;height:8px;margin-left:4px;border-radius:50%;background:var(--text);vertical-align:middle;box-shadow:0 0 12px rgba(244,244,244,.6);
+  animation:pulse 1s var(--ease) infinite}
+@keyframes pulse{50%{transform:scale(.6);opacity:.5}}
+.asks{display:flex;flex-direction:column;gap:8px;width:100%;margin-top:10px}
+.asks button{height:48px;border:0;border-radius:14px;background:var(--field);color:var(--text);font:inherit;font-size:15px;text-align:left;padding:0 16px;cursor:pointer;transition:opacity var(--fade) var(--ease)}
+.asks.busy button{opacity:.4;pointer-events:none}

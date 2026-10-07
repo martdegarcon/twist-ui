@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upload — Twist UI</title>
+<meta name="description" content="Загрузка без прогресс-бара: прогресс заливает само имя файла.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/upload"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Upload</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Фото профиля</h1>
+    <p class="sub">PNG или JPG, до 10 МБ</p>
+  </div>
+
+  <label class="drop" id="drop">
+    <input type="file" id="file" accept="image/*" aria-label="Выбрать фото">
+    <span class="avatar" id="avatar" aria-hidden="true"><img id="thumb" alt=""></span>
+    <span class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V5M7.5 9.5 12 5l4.5 4.5"/><path d="M5 15v2.5A1.5 1.5 0 0 0 6.5 19h11a1.5 1.5 0 0 0 1.5-1.5V15"/></svg>Выбрать фото</span>
+    <span class="info">
+      <span class="name" id="name">portrait.jpg</span>
+      <span class="swap-stack meta" id="meta">
+        <span data-k="size" class="on" id="size">2,4 МБ</span>
+        <span data-k="done"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Загружено</span>
+        <span data-k="fail" class="err">Ошибка — нажмите, чтобы повторить</span>
+      </span>
+    </span>
+    <span class="act" id="act" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg></span>
+  </label>
+
+  <div class="links">
+    <a id="sample">Взять пример фото</a>
+    <a id="fail">Сымитировать ошибку</a>
+  </div>
+</main>
+<button class="reset" id="reset" type="button">Сбросить</button>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

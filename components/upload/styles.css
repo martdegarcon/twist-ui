@@ -1,0 +1,52 @@
+.drop{position:relative;display:block;width:100%;height:72px;border-radius:var(--radius);background:var(--field);cursor:pointer;overflow:hidden;
+  box-shadow:inset 0 0 0 1px transparent;transition:box-shadow var(--fade) var(--ease), background var(--fade) var(--ease)}
+.drop:hover{background:rgba(33,40,48,.65)}
+.drop.dragover{box-shadow:inset 0 0 0 1px rgba(244,244,244,.4)}
+.drop.failed{box-shadow:inset 0 0 0 1px rgba(255,155,143,.35)}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer;z-index:3}
+.drop.busy input{pointer-events:none}
+
+/* empty state */
+.empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;font-size:18px;letter-spacing:-.36px;color:var(--text-80);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease)}
+.empty svg{width:22px;height:22px}
+.drop.has .empty{opacity:0;filter:blur(4px);transform:translateY(-8px)}
+
+/* avatar slides in from the left */
+.avatar{position:absolute;left:12px;top:12px;width:48px;height:48px;border-radius:50%;overflow:hidden;
+  background:linear-gradient(135deg,#3B4865,#97A6BE);opacity:0;transform:scale(.6);
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease), filter .8s var(--ease)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity .6s var(--ease)}
+.avatar img.on{opacity:1}
+.drop.has .avatar{opacity:1;transform:none;filter:grayscale(1) brightness(.7)}
+.drop.done .avatar{filter:none}
+
+.info{position:absolute;left:76px;right:56px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:2px;
+  opacity:0;transform:translateY(8px);transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease)}
+.drop.has .info{opacity:1;transform:none;transition-delay:.08s}
+
+/* the file name IS the progress bar: JS drives --p (0–100) */
+.name{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:18px;line-height:23px;letter-spacing:-.36px;
+  font-weight:400;color:transparent;
+  background:linear-gradient(90deg, var(--text) calc(var(--p, 0) * 1% - 6%), var(--rest, rgba(244,244,244,.28)) calc(var(--p, 0) * 1% + 6%));
+  background-size:100% 100%;-webkit-background-clip:text;background-clip:text;
+  transition:font-weight .6s var(--ease)}
+.drop.done .name{font-weight:600}
+.drop.failed .name{--rest:rgba(255,155,143,.75)}
+
+.meta{height:18px}
+.meta > *{justify-content:flex-start;font-size:13px}
+.meta svg{width:14px;height:14px}
+.meta path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .5s var(--ease) .1s}
+.meta .on path{stroke-dashoffset:0}
+
+.act{position:absolute;right:18px;top:50%;width:22px;height:22px;margin-top:-11px;color:var(--err);opacity:0;transform:rotate(-90deg) scale(.7);
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease)}
+.act svg{width:22px;height:22px}
+.drop.failed .act{opacity:1;transform:none}
+
+.links{display:flex;flex-direction:column;align-items:center;gap:14px}
+.links #fail{color:rgba(33,40,48,.65);font-weight:500;font-size:15px}
+
+.reset{position:fixed;right:16px;bottom:16px;font:500 12px/1 'Onest',sans-serif;letter-spacing:0;color:var(--ink);
+  background:rgba(244,244,244,.5);border:0;border-radius:10px;padding:10px 12px;cursor:pointer}

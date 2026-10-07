@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Limit — Twist UI</title>
+<meta name="description" content="Лимит символов без счётчика: у границы текст сжимает трекинг, а лишнее растворяется.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/limit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Limit</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">О себе</h1>
+    <p class="sub">Пара слов для профиля</p>
+  </div>
+
+  <label class="area" id="area">
+    <span class="swap-stack lbl" id="lbl">
+      <span data-k="bio" class="on">Описание</span>
+      <span data-k="tight">Места почти нет</span>
+      <span data-k="over" class="err" id="overText">Лишние 3 символа</span>
+    </span>
+    <span class="mirror" id="mirror" aria-hidden="true"></span>
+    <textarea id="bio" rows="3" spellcheck="false" aria-label="Описание"></textarea>
+  </label>
+
+  <div class="save-wrap" id="saveWrap">
+    <button class="btn save" id="save" type="button"><span class="lab s1">Сохранить</span><span class="lab s2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Сохранено</span></button>
+  </div>
+
+  <div class="links"><a id="fill">Заполнить примером</a></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

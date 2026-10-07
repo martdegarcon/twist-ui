@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resend — Twist UI</title>
+<meta name="description" content="Повторная отправка без таймера: подпись проявляется по буквам, пока идёт ожидание.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/resend"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Resend</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Не пришёл код?</h1>
+    <p class="sub">Проверьте спам или запросите новый,<br>когда кнопка допишет себя</p>
+  </div>
+
+  <div class="btn-wrap" id="btnWrap">
+    <button class="btn resend" id="btn" type="button" disabled aria-label="Выслать код повторно">
+      <span class="lab l-write" aria-hidden="true"><span class="l">В</span><span class="l">ы</span><span class="l">с</span><span class="l">л</span><span class="l">а</span><span class="l">т</span><span class="l">ь</span><span class="l">&nbsp;</span><span class="l">к</span><span class="l">о</span><span class="l">д</span></span>
+      <span class="lab l-sending" aria-hidden="true"><svg class="spin" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="3" r="1.8"/><circle cx="18.4" cy="5.6" r="1.6" opacity=".9"/><circle cx="21" cy="12" r="1.5" opacity=".8"/><circle cx="18.4" cy="18.4" r="1.4" opacity=".65"/><circle cx="12" cy="21" r="1.3" opacity=".5"/><circle cx="5.6" cy="18.4" r="1.2" opacity=".4"/><circle cx="3" cy="12" r="1.1" opacity=".3"/><circle cx="5.6" cy="5.6" r="1" opacity=".2"/></svg>Отправляем</span>
+      <span class="lab l-sent" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Новый код отправлен</span>
+    </button>
+  </div>
+
+  <div class="swap-stack status" id="status" aria-live="polite">
+    <p data-k="wait" class="on">Запросить снова можно чуть позже</p>
+    <p data-k="ready">Можно отправлять</p>
+    <p data-k="sent">Отправили на <b>m••••v@gmail.com</b></p>
+  </div>
+
+  <div class="links"><a href="../otp/">Назад к вводу кода</a></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — Twist UI</title>
+<meta name="description" content="Кнопки форматирования примеряют свой стиль: Ж жирнеет, К наклоняется, Ч и З прочерчивают линии.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Toggle</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Форматирование</h1>
+    <p class="sub">Каждая кнопка сперва пробует стиль на себе</p>
+  </div>
+  <div class="bar" role="toolbar" aria-label="Форматирование текста">
+    <button class="tg" data-f="b" aria-pressed="false" aria-label="Жирный"><span class="g gb">Ж</span></button>
+    <button class="tg" data-f="i" aria-pressed="false" aria-label="Курсив"><span class="g gi">К</span></button>
+    <button class="tg" data-f="u" aria-pressed="false" aria-label="Подчёркнутый"><span class="g gu">Ч</span></button>
+    <button class="tg" data-f="s" aria-pressed="false" aria-label="Зачёркнутый"><span class="g gs">З</span></button>
+  </div>
+  <div class="sample" id="sample"><span class="t">Тихие интерфейсы</span><span class="t">говорят шрифтом.</span></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twist UI — концепты интеракций</title>
+<meta name="description" content="Концепты интеракций: 59 знакомых компонентов и сценариев, каждый переосмыслен через одну идею. Состояние живёт в шрифте и движении.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="top">
+  <button class="menu" id="menuBtn" aria-label="Открыть навигацию"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="logo" href="#/" aria-label="Twist UI — главная"><span class="l1">Twist</span><span class="l2">UI</span></a>
+  <nav class="topnav">
+    <a href="#/components" data-sec="components">Компоненты</a>
+    <a href="#/flows" data-sec="flows">Сценарии</a>
+  </nav>
+  <button class="search" id="searchBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg><span>Поиск компонентов…</span><kbd>⌘K</kbd></button>
+</header>
+
+<div class="shell" id="shell">
+  <aside class="side" id="side" aria-label="Навигация"></aside>
+  <main class="main" id="main" tabindex="-1"></main>
+  <nav class="toc" id="toc" aria-label="На странице"></nav>
+</div>
+<div class="scrim" id="scrim"></div>
+
+<div class="k" id="k" role="dialog" aria-modal="true" aria-label="Поиск">
+  <div class="k-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+    <input id="kq" placeholder="Поиск среди 59 компонентов и сценариев…" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+  <div class="k-list" id="kl"><span class="k-hl" id="khl"></span></div>
+</div>
+
+<script src="assets/registry.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

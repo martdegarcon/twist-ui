@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Popover — Twist UI</title>
+<meta name="description" content="Поповер вырастает ровно из точки нажатия и сжимается обратно в неё.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/popover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Popover</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Палитра</h1>
+    <p class="sub">Окно растёт из точки нажатия</p>
+  </div>
+  <div class="sw" id="sw">
+    <button style="--c:#97A6BE" aria-label="Туман #97A6BE"></button><button style="--c:#B097BE" aria-label="Сирень #B097BE"></button><button style="--c:#97BEB5" aria-label="Шалфей #97BEB5"></button>
+    <button style="--c:#BEA997" aria-label="Песок #BEA997"></button><button style="--c:#FF9B8F" aria-label="Коралл #FF9B8F"></button><button style="--c:#F4F4F4" aria-label="Бумага #F4F4F4"></button>
+  </div>
+</main>
+<div class="pop" id="pop" role="dialog" aria-label="О цвете">
+  <span class="chip" id="chip"></span>
+  <div class="info"><b id="hex"></b><span id="name"></span></div>
+  <div class="acts"><button>Копировать</button><button>Изменить</button><button>Удалить</button></div>
+</div>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

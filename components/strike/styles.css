@@ -1,0 +1,39 @@
+.list{width:100%}
+.row{position:relative;height:64px;margin-top:10px;border-radius:var(--radius);background:var(--field);overflow:hidden;
+  touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;outline:none;
+  transition:height var(--move) var(--ease), margin var(--move) var(--ease), opacity var(--fade) var(--ease), background var(--fade) var(--ease)}
+.row:first-child{margin-top:0}
+.row:focus-visible{box-shadow:inset 0 0 0 1px rgba(244,244,244,.4)}
+.row.current{cursor:default}
+.row.dragging{cursor:grabbing;background:rgba(33,40,48,.65)}
+.row.gone{height:0;margin-top:0;opacity:0}
+
+.txt{position:absolute;left:20px;top:12px;display:flex;flex-direction:column}
+.name{position:relative;align-self:flex-start;font-size:17px;line-height:22px;letter-spacing:-.34px;white-space:nowrap;transition:opacity var(--fade) var(--ease)}
+.meta{font-size:13px;line-height:18px;color:var(--text-50);letter-spacing:-.1px;white-space:nowrap;transition:opacity var(--fade) var(--ease)}
+.tag{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:13px;color:var(--text-80);letter-spacing:-.1px}
+
+/* the strike-through follows the finger: JS drives --s (0–1) */
+.strike{position:absolute;left:-3px;top:calc(50% - .75px);height:1.5px;border-radius:1px;background:var(--text);
+  width:calc(var(--s, 0) * (100% + 6px));pointer-events:none}
+.row:not(.dragging) .strike{transition:width var(--move) var(--ease)}
+.row .name{opacity:calc(1 - var(--s, 0) * .45)}
+.row .meta{opacity:calc(1 - var(--s, 0) * .6)}
+.row.armed .strike{background:var(--err)}
+.row.armed .name{color:var(--err)}
+
+.links{margin-top:24px}
+
+/* undo toast */
+.toast{position:fixed;left:50%;bottom:24px;width:350px;max-width:calc(100% - 32px);height:56px;padding:0 8px 0 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:var(--radius);background:#121212;
+  font-size:15px;letter-spacing:-.2px;color:var(--text-80);
+  transform:translate(-50%, 24px);opacity:0;filter:blur(4px);pointer-events:none;
+  transition:transform var(--move) var(--ease), opacity var(--fade) var(--ease), filter var(--fade) var(--ease)}
+.toast.on{transform:translate(-50%, 0);opacity:1;filter:none;pointer-events:auto}
+.undo-wrap{position:relative;flex:none}
+.undo{height:40px;padding:0 14px;border:0;border-radius:12px;background:rgba(244,244,244,.1);color:var(--text);
+  font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:background var(--fade) var(--ease), transform .25s var(--ease)}
+.undo:hover{background:rgba(244,244,244,.16)}
+.undo:active{transform:scale(.95)}
+.undo-wrap .haptic-switch{clip-path:inset(0 round 12px)}

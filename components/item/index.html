@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Item — Twist UI</title>
+<meta name="description" content="Пункты чек-листа уезжают вниз, в раздел «Готово», а счётчик прокручивается.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Item</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">С чего начать</h1>
+    <p class="sub">Выполненное уезжает вниз, в «Готово»</p>
+  </div>
+  <div class="box">
+    <div class="hd"><b>Знакомство с Atlas</b><span><span class="drum" id="drum"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></span>&nbsp;из 5</span></div>
+    <div class="list" id="list"></div>
+  </div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

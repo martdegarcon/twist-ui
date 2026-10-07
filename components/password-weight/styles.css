@@ -1,0 +1,132 @@
+/* ---------- title: letter-by-letter morph ---------- */
+.title{position:relative;height:44px;width:100%}
+.title .word{position:absolute;inset:0;display:flex;justify-content:center;font-size:34px;font-weight:500;line-height:44px}
+.title .ch{display:inline-block;white-space:pre;
+  transition:opacity .45s var(--ease), filter .45s var(--ease), transform .6s var(--ease);
+  transition-delay:calc(var(--i) * 28ms)}
+.title .w-signup .ch{opacity:0;filter:blur(8px);transform:translateY(14px)}
+.signup .title .w-login .ch{opacity:0;filter:blur(8px);transform:translateY(-14px)}
+.signup .title .w-signup .ch{opacity:1;filter:none;transform:none;transition-delay:calc(120ms + var(--i) * 32ms)}
+
+.sub{margin-top:0;max-height:0;opacity:0;overflow:hidden;text-align:center;font-size:15px;line-height:20px;color:var(--text-80);
+  transform:translateY(-6px);
+  transition:max-height var(--move) var(--ease), opacity var(--fade) var(--ease), transform var(--move) var(--ease), margin var(--move) var(--ease)}
+.sub b{font-weight:500;color:var(--text)}
+.signup .sub{max-height:44px;opacity:1;transform:none;margin-top:8px;transition-delay:.25s}
+.title-wrap{width:100%;margin-bottom:28px}
+
+/* ---------- fields ---------- */
+.fields{width:100%;display:flex;flex-direction:column;transition:opacity var(--move) var(--ease)}
+.submitting .fields{opacity:.45;pointer-events:none}
+.fields > .field + .field{margin-top:10px}
+.reveal{max-height:0;opacity:0;overflow:hidden;
+  transition:max-height var(--move) var(--ease), opacity var(--fade) var(--ease)}
+.reveal > .field{margin-top:10px;transform:translateY(-8px);transition:transform var(--move) var(--ease)}
+.reveal.on{max-height:74px;opacity:1}
+.reveal.on > .field{transform:none}
+
+.field{display:block;position:relative;height:64px;border-radius:16px;background:var(--field);cursor:text;
+  box-shadow:inset 0 0 0 1px transparent;transition:box-shadow var(--fade) var(--ease)}
+.field.bad{box-shadow:inset 0 0 0 1px rgba(255,155,143,.35)}
+.field input{position:absolute;inset:0;width:100%;height:100%;border:0;outline:0;background:transparent;
+  font:inherit;font-size:18px;letter-spacing:-.36px;color:transparent;caret-color:transparent;
+  padding:0 56px 0 20px;z-index:2}
+.field input::selection{background:transparent}
+
+.mirror{position:absolute;left:20px;right:56px;top:0;bottom:0;overflow:hidden;pointer-events:none;z-index:1}
+.vals{position:absolute;left:0;top:30px;transition:top var(--move) var(--ease)}
+.field.mid .vals{top:20.5px}
+.layer{position:absolute;left:0;top:0;white-space:pre;font-size:18px;line-height:23px;letter-spacing:-.36px;
+  font-weight:400;transition:font-weight .6s var(--ease), opacity var(--fade) var(--ease), filter var(--fade) var(--ease)}
+.layer.mask{letter-spacing:.06em;opacity:0;filter:blur(4px)}
+.field.masked .layer.plain{opacity:0;filter:blur(4px)}
+.field.masked .layer.mask{opacity:1;filter:none}
+.layer .x{color:var(--err)}
+
+.ghost{color:var(--text-50);opacity:0;transition:opacity var(--fade) var(--ease)}
+.ghost.show{opacity:1}
+.acc{animation:accept .5s var(--ease) both}
+@keyframes accept{from{color:var(--text-50)}to{color:var(--text)}}
+
+/* custom caret, 19px */
+.caret{display:inline-block;width:1.5px;height:19px;margin-right:-1.5px;vertical-align:-4px;background:var(--text);
+  border-radius:1px;opacity:0;animation:none}
+.field.focus .caret{opacity:1;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{0%,55%{opacity:1}55.01%,100%{opacity:0}}
+
+/* placeholder ⇄ floating label */
+.lbl{position:absolute;left:20px;top:20.5px;height:23px;right:20px;pointer-events:none;transform-origin:left top;
+  transition:transform var(--move) var(--ease), opacity var(--fade) var(--ease)}
+.field.float .lbl{transform:translateY(-9.5px) scale(.7778)}
+.field.nolbl .lbl{opacity:0}
+.lbl > span{position:absolute;left:0;top:0;display:flex;align-items:center;gap:8px;font-size:18px;line-height:23px;
+  color:var(--text-80);white-space:nowrap;font-weight:400;
+  opacity:0;filter:blur(4px);transform:translateY(6px);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease), font-weight .6s var(--ease)}
+.lbl > span.on{opacity:1;filter:none;transform:none}
+.lbl > span.out{transform:translateY(-6px)}
+.lbl > span[data-k="nomatch"]{color:var(--err)}
+.lbl svg{width:18px;height:18px;flex:none}
+.spin{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* eye */
+.eye{position:absolute;right:14px;top:50%;width:32px;height:32px;margin-top:-16px;border:0;background:none;color:var(--text);cursor:pointer;z-index:3;
+  display:grid;place-items:center;opacity:0;transform:scale(.7);pointer-events:none;
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease)}
+.field.filled .eye{opacity:1;transform:none;pointer-events:auto}
+.eye svg{position:absolute;width:22px;height:22px;transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease), filter var(--fade) var(--ease)}
+.eye .shut{opacity:0;transform:scaleY(.4);filter:blur(2px)}
+.eye.hidden .open{opacity:0;transform:scaleY(.4);filter:blur(2px)}
+.eye.hidden .shut{opacity:1;transform:none;filter:none}
+
+/* ---------- button ---------- */
+.btn-wrap{position:relative;width:100%;margin-top:10px;display:flex;justify-content:center}
+.btn{position:relative;width:100%;height:64px;border:0;border-radius:16px;background:var(--btn);overflow:hidden;
+  font:inherit;font-size:18px;letter-spacing:-.36px;color:var(--text-50);cursor:default;white-space:nowrap;
+  transition:width .6s var(--ease), border-radius .6s var(--ease), background .5s var(--ease), color var(--fade) var(--ease), transform .25s var(--ease)}
+.btn.ready{color:var(--text);cursor:pointer}
+.btn.ready:active{transform:scale(.97)}
+.btn .lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:8px;
+  opacity:0;filter:blur(4px);transform:translateY(8px);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease)}
+.btn[data-s="continue"] .l-continue,
+.btn[data-s="create"] .l-create,
+.btn[data-s="done"] .l-done{opacity:1;filter:none;transform:none}
+.btn[data-s="loading"] .lab{transform:scale(.85)}
+
+/* 1 — collapse into a circle with a loader */
+.btn[data-s="loading"]{width:64px;border-radius:32px;color:var(--text)}
+.ring{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;opacity:0;
+  transition:opacity .25s var(--ease)}
+.ring circle{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:50 100;transform-origin:center}
+.btn[data-s="loading"] .ring{opacity:1;transition-delay:.35s}
+.btn[data-s="loading"] .ring circle{animation:ring 1s linear infinite, dash 1.4s var(--ease) infinite alternate}
+@keyframes ring{to{transform:rotate(360deg)}}
+@keyframes dash{from{stroke-dasharray:12 100}to{stroke-dasharray:52 100}}
+
+/* 2 — expand back, invert, draw the check */
+.btn[data-s="done"]{width:100%;border-radius:16px;background:var(--text);color:var(--btn)}
+.l-done svg{width:20px;height:20px}
+.l-done path{stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .5s var(--ease) .35s}
+.btn[data-s="done"] .l-done path{stroke-dashoffset:0}
+.btn[data-s="done"] .l-done{transition-delay:.15s}
+
+.btn-wrap .haptic-switch{clip-path:inset(0 round 16px);pointer-events:none}
+.btn-wrap.tappable .haptic-switch{pointer-events:auto}
+.eye .haptic-switch{clip-path:inset(0 round 999px)}
+
+/* ---------- links ---------- */
+.links{margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:14px;font-size:18px;letter-spacing:-.36px;width:100%}
+.swap{position:relative;height:23px;width:100%}
+.swap p{position:absolute;inset:0;text-align:center;color:var(--text);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease)}
+.swap .s-login{opacity:0;filter:blur(4px);transform:translateY(6px);pointer-events:none}
+.signup .swap .s-signup{opacity:0;filter:blur(4px);transform:translateY(-6px);pointer-events:none}
+.signup .swap .s-login{opacity:1;filter:none;transform:none;pointer-events:auto;transition-delay:.3s}
+
+.reset{position:fixed;right:16px;bottom:16px;font:500 12px/1 'Onest',sans-serif;letter-spacing:0;color:var(--ink);
+  background:rgba(244,244,244,.5);border:0;border-radius:10px;padding:10px 12px;cursor:pointer}
+
+
+.btn:not(.ready):active{transform:none}

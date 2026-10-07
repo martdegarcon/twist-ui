@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabs — Twist UI</title>
+<meta name="description" content="Вкладки: плашка перетекает к вкладке, а контент въезжает с той стороны, куда вы перешли.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/tabs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Tabs</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Пространство</h1>
+    <p class="sub">Контент въезжает со стороны переключения</p>
+  </div>
+  <div class="tabs" role="tablist" id="tabs"><span class="pill" id="pill"></span><button class="tab on" role="tab" data-i="0">Обзор</button><button class="tab" role="tab" data-i="1">События</button><button class="tab" role="tab" data-i="2">Настройки</button></div>
+  <div class="panels" id="panels"><div class="panel on" data-i="0"><div class="line">4 проекта</div><div class="line">12 участников</div><div class="line">Последняя правка · 2 часа назад</div></div><div class="panel" data-i="1"><div class="line">Анна прокомментировала макет</div><div class="line">Вы переименовали «Атлас»</div><div class="line">Егор присоединился к команде</div></div><div class="panel" data-i="2"><div class="line">Название пространства</div><div class="line">Права по умолчанию</div><div class="line">Опасная зона</div></div></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

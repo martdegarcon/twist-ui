@@ -1,0 +1,21 @@
+
+.grp{display:flex;align-items:center;width:100%;height:64px;padding:0 8px 0 8px;border-radius:var(--radius);background:var(--field);cursor:text;overflow:hidden}
+.pre{display:flex;align-items:center;gap:6px;height:44px;padding:0 10px;border-radius:12px;background:rgba(244,244,244,.08);color:var(--text-80);font-size:16px;flex:none;
+  transition:padding var(--move) var(--ease), background var(--fade) var(--ease)}
+.pre svg{width:16px;height:16px;flex:none}
+.pt{display:inline-block;max-width:80px;overflow:hidden;white-space:nowrap;transition:max-width var(--move) var(--ease), opacity var(--fade) var(--ease)}
+/* long text: the prefix steps aside, only the lock stays */
+.grp.compact .pt{max-width:0;opacity:0}
+.pre.bump{animation:bump .5s var(--ease)}
+@keyframes bump{35%{transform:scale(1.08);background:rgba(244,244,244,.2)}}
+.mid{position:relative;flex:1;min-width:0;height:100%;margin-left:8px}
+.mid input,.mirror{position:absolute;inset:0;font:inherit;font-size:18px;letter-spacing:-.36px;display:flex;align-items:center;white-space:pre}
+.mid input{width:100%;border:0;outline:0;background:none;color:transparent;caret-color:var(--text);padding:0}
+.mid input::placeholder{color:var(--text-50)}
+.mirror{pointer-events:none;color:var(--text);overflow:hidden}
+.ghost{color:var(--text-50)}
+.suf{flex:none;display:flex;align-items:center;height:44px;max-width:0;padding:0;border-radius:12px;background:rgba(244,244,244,.08);color:var(--text-80);font-size:16px;overflow:hidden;white-space:nowrap;opacity:0;
+  transition:max-width var(--move) var(--ease), padding var(--move) var(--ease), opacity var(--fade) var(--ease)}
+.suf.on{max-width:120px;padding:0 10px;opacity:1}
+.flytxt{position:fixed;z-index:20;pointer-events:none;font-size:18px;letter-spacing:-.36px;color:var(--text);white-space:pre}
+.links{margin-top:20px}

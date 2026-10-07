@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Radio Group — Twist UI</title>
+<meta name="description" content="Группа переключателей: точка выбора перетекает каплей от варианта к варианту.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/radio-group"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Radio Group</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Тариф</h1>
+    <p class="sub">Точка перетекает каплей между вариантами</p>
+  </div>
+  <div class="rg" id="rg" role="radiogroup"><label class="o"><input type="radio" name="plan" value="0"><span class="ring"></span><span class="t"><b>Бесплатный</b><span>Чтобы попробовать</span></span><span class="p">$0</span></label><label class="o"><input type="radio" name="plan" value="1" checked><span class="ring"></span><span class="t"><b>Pro</b><span>Для работы в одиночку</span></span><span class="p">$12</span></label><label class="o"><input type="radio" name="plan" value="2"><span class="ring"></span><span class="t"><b>Команда</b><span>Для студий и команд</span></span><span class="p">$29</span></label><span class="drop" id="drop"></span></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

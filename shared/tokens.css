@@ -1,0 +1,82 @@
+/* Twist UI — shared foundation: tokens, base layout, building blocks */
+:root{
+  --text:#F4F4F4;
+  --text-80:rgba(244,244,244,.8);
+  --text-50:rgba(244,244,244,.5);
+  --ink:#212830;
+  --btn:#121212;
+  --field:rgba(33,40,48,.5);
+  --err:#FF9B8F;
+  --radius:16px;
+  /* motion — one curve for everything (Figma smart animate, ease-out) */
+  --ease:cubic-bezier(.25,1,.5,1);
+  --move:.5s;   /* position / size */
+  --fade:.35s;  /* opacity / blur */
+}
+@media (prefers-reduced-motion:reduce){ :root{ --move:.2s; --fade:.15s } }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Onest',system-ui,sans-serif;color:var(--text);letter-spacing:-.02em;
+  background:linear-gradient(180deg,#0A0D16 0%,#151C2C 18%,#2C3853 38%,#5A6888 58%,#97A6BE 80%,#DCE4ED 100%);
+  min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;
+}
+.card{width:350px;max-width:100%;display:flex;flex-direction:column;align-items:center}
+
+/* links under the form */
+.links{margin-top:24px;font-size:18px;letter-spacing:-.36px}
+.links a{color:var(--ink);font-weight:600;text-decoration:none;cursor:pointer}
+
+/* iPhone haptics: invisible native switch under the finger (see haptics.js) */
+.haptic-switch{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;z-index:5;cursor:pointer;
+  clip-path:inset(0 round var(--radius));-webkit-tap-highlight-color:transparent}
+
+/* pack navigation */
+.pack-nav{position:fixed;left:16px;top:16px;display:flex;align-items:center;gap:8px;font-size:13px;letter-spacing:0;
+  color:var(--text-80);text-decoration:none;padding:8px 12px 8px 10px;border-radius:12px;background:rgba(33,40,48,.35);
+  transition:background var(--fade) var(--ease), color var(--fade) var(--ease);z-index:20}
+.pack-nav:hover{background:rgba(33,40,48,.6);color:var(--text)}
+.pack-nav svg{width:16px;height:16px}
+.pack-nav b{font-weight:500;color:var(--text)}
+
+/* ---------- shared building blocks ---------- */
+.title-wrap{width:100%;margin-bottom:28px;text-align:center}
+.title{font-size:34px;font-weight:500;line-height:44px}
+.sub{margin-top:8px;font-size:15px;line-height:20px;color:var(--text-80)}
+.sub b{font-weight:500;color:var(--text)}
+
+.btn{position:relative;width:100%;height:64px;border:0;border-radius:var(--radius);background:var(--btn);color:var(--text);
+  font:inherit;font-size:18px;letter-spacing:-.36px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;
+  transition:transform .25s var(--ease), color var(--fade) var(--ease), background var(--fade) var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn[disabled]{color:var(--text-50);cursor:default;transform:none}
+
+/* crossfading stack of short status texts */
+.swap-stack{position:relative;height:20px;width:100%}
+.swap-stack > *{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:14px;line-height:20px;color:var(--text-80);letter-spacing:-.1px;white-space:nowrap;
+  opacity:0;filter:blur(4px);transform:translateY(6px);
+  transition:opacity var(--fade) var(--ease), filter var(--fade) var(--ease), transform var(--move) var(--ease)}
+.swap-stack > .on{opacity:1;filter:none;transform:none}
+.swap-stack > .out{transform:translateY(-6px)}
+.swap-stack svg{width:16px;height:16px;flex:none}
+.err{color:var(--err)!important}
+
+.spin{animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* custom 19px caret */
+.caret{display:inline-block;width:1.5px;height:19px;background:var(--text);border-radius:1px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{0%,55%{opacity:1}55.01%,100%{opacity:0}}
+
+/* keyboard focus: one consistent ring everywhere (pointer clicks don't show it) */
+:where(button, a, [tabindex], [role="button"], summary):focus-visible{outline:2px solid rgba(244,244,244,.75);outline-offset:2px}
+
+/* inside the docs site preview frame: no pack navigation */
+.embedded .pack-nav{display:none}
+/* home showcase tiles: hide demo-only controls */
+.showcase .reset{display:none}
+.showcase body{background:transparent}
+.showcase .title-wrap{display:none}
+.showcase .title-wrap:has(.word){display:block}

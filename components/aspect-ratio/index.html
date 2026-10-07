@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aspect Ratio — Twist UI</title>
+<meta name="description" content="Рамка с пропорциями, которая плавно перекадрирует снимок вокруг объекта: метки обрезки и перекатывающаяся подпись.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/aspect-ratio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Aspect Ratio</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Кадр</h1>
+    <p class="sub">Рамка перекадрирует вокруг объекта</p>
+  </div>
+  <div class="stage" id="stage">
+    <div class="frame" id="frame">
+      <div class="img" id="img"><span class="sun"></span><span class="hill a"></span><span class="hill b"></span><span class="subj"></span></div>
+      <i class="cm tl"></i><i class="cm tr"></i><i class="cm bl"></i><i class="cm br"></i>
+      <span class="tag" id="tag"></span>
+    </div>
+  </div>
+  <div class="seg" id="seg"><button data-w="1" data-h="1">1:1</button><button data-w="4" data-h="5" class=on>4:5</button><button data-w="16" data-h="9">16:9</button><button data-w="9" data-h="16">9:16</button></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

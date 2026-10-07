@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marker — Twist UI</title>
+<meta name="description" content="Выделите текст — маркер прокрасит его слева направо, строка за строкой; клик по пометке стирает её.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/marker"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Marker</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Маркер</h1>
+    <p class="sub">Выделите слова — по ним пройдёт маркер</p>
+  </div>
+  <article class="doc" id="doc">
+    <p>Хорошую анимацию не замечаешь, пока её нет. Когда каждая смена состояния идёт по одной кривой, интерфейс начинает ощущаться единым материалом — и люди перестают замечать переходы и начинают им доверять.</p>
+    <p>Выберите одну кривую, дайте перемещениям полсекунды, затуханиям — треть, а остальное доверьте шрифту.</p>
+  </article>
+  <div class="ctl"><button class="btn" id="demo" type="button">Выделить главное</button><button class="btn ghost" id="clear" type="button">Очистить</button></div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

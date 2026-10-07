@@ -1,0 +1,26 @@
+
+.profile{width:100%;display:flex;align-items:center;gap:14px;height:72px;padding:0 20px;border-radius:var(--radius);background:var(--field);margin-bottom:10px}
+.ava{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#3B4865,#97A6BE);font-size:15px;font-weight:600}
+.who{display:flex;flex-direction:column;font-size:17px;letter-spacing:-.34px}
+.who b{font-weight:500}.who span{font-size:13px;color:var(--text-50)}
+
+.scrim{position:fixed;inset:0;background:rgba(6,8,14,.55);opacity:0;pointer-events:none;transition:opacity var(--move) var(--ease);z-index:30}
+.scrim.on{opacity:1;pointer-events:auto}
+/* the shell is the morphing surface: it starts as the button and becomes the dialog */
+.shell{position:fixed;z-index:31;background:#121212;border-radius:16px;display:grid;place-items:center;visibility:hidden;overflow:hidden}
+.ghost-label{font-size:18px;letter-spacing:-.36px;white-space:nowrap}
+.dialog{position:fixed;z-index:32;left:50%;top:50%;width:min(380px, calc(100% - 32px));transform:translate(-50%,-50%);padding:28px 24px 24px;
+  visibility:hidden}
+.dialog > *{opacity:0;transform:translateY(8px);filter:blur(3px);
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease), filter var(--fade) var(--ease)}
+.dialog.show > *{opacity:1;transform:none;filter:none}
+.dialog.show > *:nth-child(2){transition-delay:30ms}.dialog.show > *:nth-child(3){transition-delay:60ms}
+.dialog.show > *:nth-child(4){transition-delay:90ms}.dialog.show > *:nth-child(5){transition-delay:120ms}
+.dialog h2{font-size:24px;font-weight:500;letter-spacing:-.6px}
+.dsub{margin-top:4px;font-size:14px;color:var(--text-50);margin-bottom:20px}
+.f{display:flex;flex-direction:column;justify-content:center;height:64px;padding:0 18px;border-radius:var(--radius);background:rgba(244,244,244,.06);margin-bottom:10px}
+.f span{font-size:13px;color:var(--text-50)}
+.f input{border:0;outline:0;background:none;color:var(--text);font:inherit;font-size:17px;letter-spacing:-.34px;padding:0;caret-color:var(--text)}
+.actions{display:flex;gap:10px;margin-top:10px}
+.btn.ghost{background:rgba(244,244,244,.08)}
+.btn.light{background:var(--text);color:#121212;font-weight:500}

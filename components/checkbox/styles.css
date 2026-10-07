@@ -1,0 +1,19 @@
+
+.list{width:100%;display:flex;flex-direction:column;gap:10px}
+.t{position:relative;height:64px;display:flex;align-items:center;gap:14px;padding:0 20px;border-radius:var(--radius);background:var(--field);cursor:pointer;
+  transition:background var(--move) var(--ease)}
+.t.on{background:rgba(33,40,48,.3)}
+.box{width:26px;height:26px;flex:none;border-radius:8px;box-shadow:inset 0 0 0 1.5px rgba(244,244,244,.4);display:grid;place-items:center;
+  transition:background var(--move) var(--ease), box-shadow var(--move) var(--ease), transform .25s var(--ease)}
+.t:active .box{transform:scale(.9)}
+.t.on .box{background:var(--text);box-shadow:inset 0 0 0 1.5px var(--text)}
+.box svg{width:20px;height:20px;fill:none;stroke:#121212;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:22;stroke-dashoffset:22;
+  transition:stroke-dashoffset .1s}
+/* hand-drawn: slow start of the stroke, fast flick at the end */
+.t.on .box svg{stroke-dashoffset:0;transition:stroke-dashoffset .45s cubic-bezier(.65,0,.35,1) .08s}
+.tx{font-size:17px;letter-spacing:-.34px;font-weight:400;transition:opacity var(--move) var(--ease), font-weight var(--move) var(--ease), transform var(--move) var(--ease)}
+.t.on .tx{opacity:.4;font-weight:300;transform:translateX(2px)}
+.native{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.sum{margin-top:16px;display:flex;align-items:center;font-size:15px;color:var(--text-80)}
+.drum{display:inline-flex;flex-direction:column;height:20px;overflow:hidden;color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.drum b{height:20px;line-height:20px;transform:translateY(calc(var(--n, 0) * -20px));transition:transform .5s var(--ease)}

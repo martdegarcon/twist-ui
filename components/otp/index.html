@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OTP — Twist UI</title>
+<meta name="description" content="Ввод кода: цифры крутятся, как барабаны, а верный код сплавляет ячейки в одну плашку.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/otp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>OTP</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Проверьте почту</h1>
+    <p class="sub">Отправили 6-значный код на <b>m••••v@gmail.com</b></p>
+  </div>
+
+  <div class="otp" id="otp">
+    <div class="cells" id="cells"><div class="cell"><div class="strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div><i class="caret"></i></div><div class="cell"><div class="strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div><i class="caret"></i></div><div class="cell"><div class="strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div><i class="caret"></i></div><div class="cell"><div class="strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div><i class="caret"></i></div><div class="cell"><div class="strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div><i class="caret"></i></div><div class="cell"><div class="strip"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div><i class="caret"></i></div></div>
+    <div class="plate" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Почта подтверждена</span></div>
+    <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" aria-label="6-значный код" spellcheck="false">
+  </div>
+
+  <div class="swap-stack status" id="status" aria-live="polite">
+    <p data-k="hint" class="on">Демо-код: <b>428193</b></p>
+    <p data-k="checking"><svg class="spin" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="3" r="1.8"/><circle cx="18.4" cy="5.6" r="1.6" opacity=".9"/><circle cx="21" cy="12" r="1.5" opacity=".8"/><circle cx="18.4" cy="18.4" r="1.4" opacity=".65"/><circle cx="12" cy="21" r="1.3" opacity=".5"/><circle cx="5.6" cy="18.4" r="1.2" opacity=".4"/><circle cx="3" cy="12" r="1.1" opacity=".3"/><circle cx="5.6" cy="5.6" r="1" opacity=".2"/></svg>Проверяем</p>
+    <p data-k="wrong" class="err"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></svg>Неверный код — попробуйте ещё раз</p>
+    <p data-k="ok" class="okline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Всё готово</p>
+  </div>
+
+  <div class="links"><a href="../resend/">Не пришёл код?</a></div>
+</main>
+<button class="reset" id="reset" type="button">Сбросить</button>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

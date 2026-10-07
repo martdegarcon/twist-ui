@@ -1,0 +1,19 @@
+
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:100%;padding:6px;border-radius:var(--radius);background:var(--field);margin-bottom:10px}
+.seg button{height:42px;border:0;border-radius:11px;background:none;color:var(--text-50);font:inherit;font-size:15px;cursor:pointer;transition:background var(--fade) var(--ease), color var(--fade) var(--ease)}
+.seg button.on{background:rgba(244,244,244,.12);color:var(--text)}
+.slot{position:relative;width:100%;height:120px}
+.alert{position:absolute;inset:0;display:flex;gap:14px;padding:18px;border-radius:var(--radius);background:var(--bg);box-shadow:inset 0 0 0 1px var(--bd);
+  transform-origin:calc(100% - 14px) 14px;
+  transition:background var(--move) var(--ease), box-shadow var(--move) var(--ease), transform .55s var(--ease), opacity .3s var(--ease), filter .4s var(--ease), border-radius .55s var(--ease)}
+.alert.folded{transform:scale(.06);opacity:0;filter:blur(6px);border-radius:50%;pointer-events:none}
+.ic{width:24px;height:24px;flex:none;border-radius:50%;display:grid;place-items:center;background:var(--c);color:#121212;font-weight:800;font-size:14px;transition:background var(--move) var(--ease)}
+.tx b{display:block;font-size:17px;letter-spacing:-.3px;color:var(--c);font-weight:var(--w);transition:font-weight .6s var(--ease), color var(--move) var(--ease), letter-spacing .6s var(--ease)}
+.tx p{margin-top:4px;font-size:14px;line-height:20px;color:var(--text-80)}
+.x{width:32px;height:32px;flex:none;margin-left:auto;border:0;border-radius:10px;background:none;color:var(--text-50);font-size:18px;cursor:pointer}
+.x:hover{background:rgba(244,244,244,.08);color:var(--text)}
+.dot{position:absolute;right:6px;top:6px;width:16px;height:16px;border:0;border-radius:50%;background:var(--c);cursor:pointer;
+  opacity:0;transform:scale(0);transition:opacity .3s var(--ease) .25s, transform .5s var(--ease) .2s}
+.dot.on{opacity:1;transform:none}
+.dot.on::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--c);animation:ring 1.6s var(--ease) infinite}
+@keyframes ring{from{transform:scale(.5);opacity:1}to{transform:scale(1.4);opacity:0}}

@@ -1,0 +1,27 @@
+
+.bar{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:6px;border-radius:var(--radius);background:var(--field)}
+.tg{height:52px;border:0;border-radius:12px;background:transparent;color:var(--text-80);font:inherit;font-size:22px;cursor:pointer;
+  transition:background var(--fade) var(--ease), color var(--fade) var(--ease), transform .25s var(--ease)}
+.tg:active{transform:scale(.94)}
+.tg[aria-pressed="true"]{background:var(--text);color:#121212}
+.g{display:inline-block;position:relative;font-weight:300;
+  transition:font-weight var(--move) var(--ease), transform var(--move) var(--ease), background-size var(--move) var(--ease)}
+/* the glyph shows its own effect */
+.tg[aria-pressed="true"] .gb{font-weight:800}
+.tg[aria-pressed="true"] .gi{transform:skewX(-14deg)}
+.gu,.gs{background-repeat:no-repeat;background-image:linear-gradient(currentColor,currentColor);background-size:0% 2px}
+.gu{background-position:0 100%}
+.gs{background-position:0 55%}
+.tg[aria-pressed="true"] .gu,.tg[aria-pressed="true"] .gs{background-size:100% 2px}
+
+.sample{width:100%;margin-top:10px;padding:28px 22px;border-radius:var(--radius);background:var(--field);display:flex;flex-direction:column;gap:4px}
+.t{display:inline-block;align-self:flex-start;font-size:30px;line-height:38px;letter-spacing:-.6px;font-weight:400;transform-origin:left bottom;
+  background-repeat:no-repeat;background-image:linear-gradient(currentColor,currentColor),linear-gradient(currentColor,currentColor);
+  background-size:0% 2px,0% 2px;background-position:0 92%,0 56%;
+  transition:font-weight var(--move) var(--ease), transform var(--move) var(--ease), background-size .6s var(--ease)}
+.t:nth-child(2){transition-delay:60ms}
+.sample.b .t{font-weight:750}
+.sample.i .t{transform:skewX(-10deg)}
+.sample.u .t{background-size:100% 2px,0% 2px}
+.sample.s .t{background-size:0% 2px,100% 2px}
+.sample.u.s .t{background-size:100% 2px,100% 2px}

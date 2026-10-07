@@ -1,0 +1,20 @@
+
+.rg{position:relative;width:100%;display:flex;flex-direction:column;gap:10px}
+.o{position:relative;height:72px;display:flex;align-items:center;gap:16px;padding:0 20px;border-radius:var(--radius);background:var(--field);cursor:pointer;
+  box-shadow:inset 0 0 0 1px transparent;transition:box-shadow var(--fade) var(--ease), background var(--fade) var(--ease)}
+.o.on{box-shadow:inset 0 0 0 1px rgba(244,244,244,.35);background:rgba(33,40,48,.7)}
+.o input{position:absolute;opacity:0;pointer-events:none}
+.ring{width:24px;height:24px;flex:none;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(244,244,244,.4);transition:box-shadow var(--fade) var(--ease)}
+.o.on .ring{box-shadow:inset 0 0 0 1.5px var(--text)}
+.t{flex:1;display:flex;flex-direction:column}
+.t b{font-size:17px;font-weight:400;letter-spacing:-.34px;transition:font-weight var(--move) var(--ease)}
+.o.on .t b{font-weight:650}
+.t span{font-size:13px;color:var(--text-50)}
+.p{font-size:17px;font-variant-numeric:tabular-nums;color:var(--text-80);transition:color var(--fade) var(--ease), font-weight var(--move) var(--ease)}
+.o.on .p{color:var(--text);font-weight:600}
+.o:focus-within{outline:1px solid rgba(244,244,244,.3);outline-offset:2px}
+/* the drop: one dot that stretches while it travels between rings */
+.drop{position:absolute;left:27px;top:0;width:10px;height:10px;border-radius:5px;background:var(--text);pointer-events:none;
+  transition:transform .55s var(--ease)}
+.drop.go{animation:stretch .55s var(--ease)}
+@keyframes stretch{0%{height:10px}35%{height:34px;width:8px;margin-left:1px}100%{height:10px}}

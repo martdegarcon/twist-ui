@@ -1,0 +1,19 @@
+
+.acc{width:100%;display:flex;flex-direction:column;gap:10px}
+.it{border-radius:var(--radius);background:var(--field);transition:background var(--fade) var(--ease)}
+.q{width:100%;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 20px;border:0;background:none;color:var(--text);
+  font:inherit;font-size:17px;letter-spacing:-.34px;text-align:left;cursor:pointer;font-weight:400;
+  transition:font-weight var(--move) var(--ease), opacity var(--move) var(--ease), filter var(--move) var(--ease)}
+.q i{width:9px;height:9px;flex:none;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);
+  transition:transform var(--move) var(--ease)}
+.it.on .q{font-weight:650}
+.it.on .q i{transform:rotate(225deg) translate(-2px,-2px)}
+/* when something is open, the closed ones get lighter and thinner */
+.acc.has .it:not(.on) .q{font-weight:300;opacity:.5}
+.acc.has .it:not(.on){background:rgba(33,40,48,.3)}
+.a{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--move) var(--ease)}
+.a > div{overflow:hidden}
+.it.on .a{grid-template-rows:1fr}
+.a p{padding:0 20px 20px;font-size:15px;line-height:22px;color:var(--text-80);opacity:0;transform:translateY(-6px);filter:blur(3px);
+  transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease), filter var(--fade) var(--ease)}
+.it.on .a p{opacity:1;transform:none;filter:none;transition-delay:.08s}

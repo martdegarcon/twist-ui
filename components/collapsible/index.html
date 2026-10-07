@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collapsible — Twist UI</title>
+<meta name="description" content="Сворачиваемый блок: в покое — стопка уведомлений, по нажатию раскладывается, как колода карт.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/collapsible"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Collapsible</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Уведомления</h1>
+    <p class="sub">Стопка раскладывается, как карты</p>
+  </div>
+  <div class="stack" id="stack"><div class="n" data-i="0"><span class="av">А</span><span class="nt"><b>Анна</b> ответила в «Hero»</span><span class="tm">2 мин</span></div><div class="n" data-i="1"><span class="av">Е</span><span class="nt"><b>Егор</b> присоединился к Atlas</span><span class="tm">14 мин</span></div><div class="n" data-i="2"><span class="av">С</span><span class="nt"><b>Сборка</b> выложена в прод</span><span class="tm">1 ч</span></div><div class="n" data-i="3"><span class="av">Д</span><span class="nt"><b>Дмитрий</b> прислал бриф</span><span class="tm">3 ч</span></div><div class="n" data-i="4"><span class="av">К</span><span class="nt"><b>Календарь</b> Ревью в 16:00</span><span class="tm">5 ч</span></div></div>
+  <button class="more" id="toggle" type="button"><span class="m1">Показать ещё 4</span><span class="m2">Свернуть</span></button>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

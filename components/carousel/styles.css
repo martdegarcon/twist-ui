@@ -1,0 +1,17 @@
+
+.deck{position:relative;width:100%;height:300px;margin-top:8px;touch-action:pan-y}
+.slide{position:absolute;inset:0 0 24px 0;border-radius:24px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;
+  background:linear-gradient(160deg,var(--a),var(--b));color:var(--text);cursor:grab;user-select:none;-webkit-user-select:none;
+  box-shadow:0 20px 40px -24px rgba(0,0,0,.6);
+  transition:transform .6s var(--ease), opacity var(--move) var(--ease), filter var(--move) var(--ease)}
+.slide.drag{transition:none;cursor:grabbing}
+.slide .k{font-size:14px;font-weight:500;opacity:.7}
+.slide h3{font-size:34px;font-weight:600;letter-spacing:-.8px;line-height:1}
+.slide p{margin-top:6px;font-size:15px;opacity:.85}
+.ctl{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:8px}
+.nav{width:52px;height:52px;border:0;border-radius:var(--radius);background:var(--field);color:var(--text);display:grid;place-items:center;cursor:pointer;transition:transform .25s var(--ease)}
+.nav:active{transform:scale(.94)}
+.nav svg{width:20px;height:20px}
+.count{display:flex;align-items:center;font-size:16px;color:var(--text-80);font-variant-numeric:tabular-nums}
+.drum{display:inline-flex;flex-direction:column;height:22px;overflow:hidden;color:var(--text);font-weight:600}
+.drum b{height:22px;line-height:22px;transform:translateY(calc(var(--n, 0) * -22px));transition:transform .5s var(--ease)}

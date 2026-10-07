@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resizable — Twist UI</title>
+<meta name="description" content="Панели, у которых текст меняет ширину букв вместо переноса строк.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/resizable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Resizable</b></a>
+
+<main class="card wide">
+  <div class="title-wrap">
+    <h1 class="title">Панели</h1>
+    <p class="sub">Тяните — слова сужаются, а не переносятся</p>
+  </div>
+  <div class="panes" id="panes">
+    <section class="pane" id="left"><p class="cap">Эскиз</p><h2 class="fit">Узко, но всё</h2><h2 class="fit">в одну строку</h2></section>
+    <div class="handle" id="handle" role="separator" aria-label="Изменить размер панелей" aria-orientation="vertical" tabindex="0" aria-valuemin="20" aria-valuemax="80" aria-valuenow="50"><i></i></div>
+    <section class="pane" id="right"><p class="cap">Превью</p><h2 class="fit">Ширина —</h2><h2 class="fit">переменная</h2></section>
+  </div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

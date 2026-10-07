@@ -1,0 +1,20 @@
+
+.post{width:100%;padding:22px 20px;border-radius:var(--radius);background:var(--field);display:flex;flex-direction:column;gap:6px}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ava{position:relative;width:44px;height:44px;border-radius:50%;background:rgba(244,244,244,.08);overflow:hidden;flex:none}
+.ava::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#3B4865,#97A6BE);opacity:0;transition:opacity .6s var(--ease)}
+.ini{position:absolute;inset:0;display:grid;place-items:center;font-size:15px;font-weight:600;z-index:1;opacity:0;transition:opacity .6s var(--ease) .15s}
+.post.loaded .ava::after,.post.loaded .ini{opacity:1}
+.meta{flex:1;display:flex;flex-direction:column;gap:4px}
+.ln{position:relative;height:24px;font-size:17px;line-height:24px;letter-spacing:-.34px;white-space:nowrap}
+.ln.small{height:18px;font-size:13px;line-height:18px;color:var(--text-50)}
+.tx .l{display:inline-block;opacity:0;filter:blur(4px);transform:translateY(4px);
+  transition:opacity .3s var(--ease), filter .3s var(--ease), transform .4s var(--ease)}
+.tx .l.on{opacity:1;filter:none;transform:none}
+/* the bar starts where the text has reached and ends where the text will end */
+.sk{position:absolute;top:4px;bottom:4px;left:var(--from, 0px);width:var(--len, 60%);border-radius:6px;
+  background:linear-gradient(90deg,rgba(244,244,244,.07) 0%,rgba(244,244,244,.14) 50%,rgba(244,244,244,.07) 100%);background-size:200% 100%;
+  animation:shimmer 1.4s linear infinite}
+.ln.small .sk{top:3px;bottom:3px}
+@keyframes shimmer{to{background-position:-200% 0}}
+.btn{margin-top:10px}

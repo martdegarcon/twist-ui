@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skeleton — Twist UI</title>
+<meta name="description" content="Скелетон превращается в настоящий текст по буквам, съедая свои плашки.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/skeleton"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Skeleton</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Загрузка</h1>
+    <p class="sub">Текст пишется прямо поверх плашек</p>
+  </div>
+  <article class="post" id="post">
+    <div class="top">
+      <span class="ava"><span class="ini">АК</span></span>
+      <div class="meta">
+        <div class="ln"><span class="tx">Анна Ковалёва</span><i class="sk"></i></div>
+        <div class="ln small"><span class="tx">Продуктовый дизайнер · 2 ч</span><i class="sk"></i></div>
+      </div>
+    </div>
+    <div class="ln"><span class="tx">Сегодня выкатили новый онбординг.</span><i class="sk"></i></div>
+    <div class="ln"><span class="tx">Теперь каждое состояние — один</span><i class="sk"></i></div>
+    <div class="ln"><span class="tx">спокойный переход, без спиннеров.</span><i class="sk"></i></div>
+  </article>
+  <button class="btn" id="reload" type="button">Обновить</button>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

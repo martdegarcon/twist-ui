@@ -1,0 +1,20 @@
+
+body{display:block;padding:0;overflow-x:hidden}
+.shell{display:flex;min-height:100vh}
+.shell > main{flex:1;margin:0 auto;padding:80px 24px 40px;width:auto;max-width:720px;transition:padding var(--move) var(--ease)}
+.grid{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.tile{height:110px;border-radius:var(--radius);display:flex;align-items:flex-end;padding:14px;font-weight:600;
+  background:linear-gradient(160deg,hsl(var(--h) 25% 25%),hsl(var(--h) 25% 62%))}
+.shell.open .grid{grid-template-columns:repeat(2,1fr)}
+.sheet{flex:none;width:0;overflow:hidden;background:#121212;transition:width var(--move) var(--ease)}
+.shell.open .sheet{width:320px}
+.sheet > *{margin-left:24px;margin-right:24px;width:272px;opacity:0;transform:translateX(24px);transition:opacity var(--fade) var(--ease), transform var(--move) var(--ease)}
+.shell.open .sheet > *{opacity:1;transform:none}
+.shell.open .sheet > *:nth-child(2){transition-delay:40ms}.shell.open .sheet > *:nth-child(3){transition-delay:80ms}
+.shell.open .sheet > *:nth-child(4){transition-delay:120ms}.shell.open .sheet > *:nth-child(5){transition-delay:160ms}
+.sheet h2{margin-top:80px;margin-bottom:16px;font-size:24px;font-weight:500;letter-spacing:-.5px}
+.chk{display:flex;align-items:center;justify-content:space-between;height:56px;padding:0 16px;border-radius:14px;background:rgba(244,244,244,.06);margin-bottom:8px;font-size:15px}
+.btn.light{background:var(--text);color:#121212;font-weight:500;margin-top:8px}
+@media (max-width:700px){ .shell.open .sheet{width:min(320px, 85vw)} .shell.open > main{display:none} }
+
+.chk input{accent-color:#F4F4F4;width:18px;height:18px}

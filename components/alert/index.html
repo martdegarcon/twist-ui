@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alert — Twist UI</title>
+<meta name="description" content="Уведомления, у которых насыщенность шрифта — это важность; закрытие сворачивает их в точку, а не выбрасывает.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Alert</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Уведомления</h1>
+    <p class="sub">Важность — это вес. Закрытие — в точку</p>
+  </div>
+  <div class="seg" id="seg"><button data-k="info" class="on">Инфо</button><button data-k="warn">Внимание</button><button data-k="err">Ошибка</button></div>
+  <div class="slot" id="slot">
+    <div class="alert" id="alert" role="status">
+      <span class="ic" id="ic"></span>
+      <div class="tx"><b id="at"></b><p id="ad"></p></div>
+      <button class="x" id="x" aria-label="Закрыть">×</button>
+    </div>
+    <button class="dot" id="dot" aria-label="Показать уведомление"></button>
+  </div>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

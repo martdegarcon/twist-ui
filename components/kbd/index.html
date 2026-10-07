@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kbd — Twist UI</title>
+<meta name="description" content="Подсказки клавиш, которые нажимаются вместе с настоящими клавишами.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/tokens.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="pack-nav" href="../../#/components/kbd"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Twist UI · <b>Kbd</b></a>
+
+<main class="card">
+  <div class="title-wrap">
+    <h1 class="title">Сочетания</h1>
+    <p class="sub">Нажимайте клавиши — колпачки нажмутся вместе с ними</p>
+  </div>
+  <div class="list" id="list"><div class="sc" data-i="0"><span class="nm">Меню команд</span><span class="keys"><kbd data-k="⌘">⌘</kbd><kbd data-k="K">K</kbd></span></div><div class="sc" data-i="1"><span class="nm">Поиск файлов</span><span class="keys"><kbd data-k="⌘">⌘</kbd><kbd data-k="P">P</kbd></span></div><div class="sc" data-i="2"><span class="nm">Новый проект</span><span class="keys"><kbd data-k="⇧">⇧</kbd><kbd data-k="⌘">⌘</kbd><kbd data-k="N">N</kbd></span></div><div class="sc" data-i="3"><span class="nm">Назад</span><span class="keys"><kbd data-k="Esc">Esc</kbd></span></div><div class="sc" data-i="4"><span class="nm">Перемещение</span><span class="keys"><kbd data-k="←">←</kbd><kbd data-k="→">→</kbd></span></div></div>
+  <p class="hint">На телефоне касайтесь колпачков</p>
+</main>
+
+<script src="../../shared/haptics.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

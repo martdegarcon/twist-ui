@@ -1,0 +1,18 @@
+
+.combo{width:100%}
+.field{display:flex;flex-direction:column;justify-content:center;height:64px;padding:0 20px;border-radius:var(--radius);background:var(--field)}
+.lbl{font-size:13px;color:var(--text-50)}
+.field input{border:0;outline:0;background:none;color:var(--text);font:inherit;font-size:18px;letter-spacing:-.36px;padding:0;caret-color:var(--text)}
+.field input::placeholder{color:var(--text-50)}
+.list{list-style:none;position:relative;margin-top:10px;border-radius:var(--radius);background:var(--field);overflow:hidden;
+  transition:height var(--move) var(--ease)}
+.opt{position:absolute;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;cursor:pointer;
+  font-size:17px;letter-spacing:-.34px;
+  transition:transform var(--move) var(--ease), opacity var(--fade) var(--ease), filter var(--fade) var(--ease), background var(--fade) var(--ease)}
+.opt.hide{opacity:0;filter:blur(4px);pointer-events:none}
+.opt.act{background:rgba(244,244,244,.07)}
+.opt .c{color:var(--text-50);font-size:13px}
+.opt .ch{font-weight:300;color:rgba(244,244,244,.55);transition:font-weight .45s var(--ease), color .45s var(--ease)}
+.opt .ch.m{font-weight:700;color:var(--text)}
+.empty{position:absolute;inset:0;display:grid;place-items:center;font-size:15px;color:var(--text-50);opacity:0;transition:opacity var(--fade) var(--ease)}
+.list.none .empty{opacity:1}

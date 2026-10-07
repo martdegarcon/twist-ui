@@ -1,0 +1,7 @@
+
+.bg{position:relative;display:grid;grid-template-columns:repeat(4,1fr);width:100%;height:56px;padding:5px;border-radius:var(--radius);background:var(--field)}
+.bg button{position:relative;z-index:1;border:0;background:none;color:var(--text-50);font:inherit;font-size:15px;cursor:pointer;transition:color .3s var(--ease), font-weight .4s var(--ease)}
+.bg button.on{color:#121212;font-weight:600}
+.blob{position:absolute;top:5px;bottom:5px;border-radius:12px;background:var(--text)}
+.val{width:100%;height:150px;margin-top:10px;border-radius:var(--radius);background:var(--field);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.sw{font-size:56px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}

@@ -1,0 +1,22 @@
+
+.card.wide{width:520px}
+.table{width:100%;border-radius:var(--radius);background:var(--field);overflow:hidden}
+.head,.r{display:grid;grid-template-columns:1.5fr 1fr .9fr .7fr;align-items:center;padding:0 20px;gap:8px}
+.head{height:52px;border-bottom:1px solid rgba(244,244,244,.08)}
+.head button{display:flex;align-items:center;gap:6px;border:0;background:none;color:var(--text-50);font:inherit;font-size:13px;letter-spacing:0;cursor:pointer;padding:0;height:100%;
+  transition:color var(--fade) var(--ease)}
+.head button.num{justify-content:flex-end}
+.head button.on{color:var(--text)}
+.head i{width:8px;height:8px;border-left:1.5px solid currentColor;border-top:1.5px solid currentColor;transform:rotate(45deg) translate(2px,2px);opacity:0;
+  transition:transform var(--move) var(--ease), opacity var(--fade) var(--ease)}
+.head button.on i{opacity:1}
+.head button.on.desc i{transform:rotate(225deg) translate(2px,2px)}
+.body{position:relative}
+.r{position:absolute;left:0;right:0;height:56px;font-size:15px;letter-spacing:-.2px;transition:transform .7s var(--ease)}
+.r + .r{}
+.r span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:font-weight var(--move) var(--ease), color var(--fade) var(--ease)}
+.r .num{text-align:right;font-variant-numeric:tabular-nums}
+.r .plan{color:var(--text-80)}
+.r span.sorted{font-weight:600}
+.r .sep{position:absolute;left:20px;right:20px;top:0;height:1px;background:rgba(244,244,244,.06)}
+@media (max-width:560px){ .card.wide{width:100%} .head,.r{padding:0 14px;grid-template-columns:1.3fr .9fr .9fr .6fr} }
